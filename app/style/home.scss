@@ -1,9 +1,27 @@
 .top-slider {
   width: 100%;
   height: 600px;
-
+  .top-slider__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #f6f8fa;
+      opacity: 0.5;
+      transition: 0.3s;
+      &.swiper-pagination-bullet-active {
+        background: #f6f8fa;
+        opacity: 1;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
   &__item {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -44,6 +62,8 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    position: relative;
+    z-index: 1;
   }
   &__link {
     font-family: "Mabry Pro";
@@ -66,6 +86,8 @@
     align-items: center;
     width: fit-content;
     height: fit-content;
+    position: relative;
+    z-index: 1;
   }
   &__thumbnail {
     position: absolute;
@@ -73,12 +95,188 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
     }
+  }
+}
+
+.shop-slider {
+  margin-top: 30px;
+  height: fit-content;
+  max-height: 500px;
+  .swiper-wrapper {
+  }
+  .shop-slider__prev {
+    background-image: url(assets/images/icons/shop-slider-arrow.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    &::after {
+      content: none;
+    }
+  }
+  .shop-slider__next {
+    background-image: url(assets/images/icons/shop-slider-arrow.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg);
+    &::after {
+      content: none;
+    }
+  }
+}
+.shop-item {
+  position: relative;
+  background: linear-gradient(
+    74.66deg,
+    #d7e6ef -5.56%,
+    #ecf0f3 36.64%,
+    #f0f0f0 100%
+  );
+  border-radius: 10px;
+  &__status {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    color: #f7f3ea;
+
+    transform: rotate(-15deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &.sale {
+      background: #d43246;
+    }
+  }
+  &__thumbnail {
+    width: 100%;
+    height: 350px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+  &__content {
+    padding: 15px 25px 50px 25px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "title ."
+      "tags  price";
+    gap: 15px;
+  }
+  &__title {
+    grid-area: title;
+    font-family: "William Subhead Pro";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    color: #7699af;
+  }
+  &__tags {
+    grid-area: tags;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    li {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 14px;
+
+      color: #7699af;
+      & + li {
+        padding-left: 5px;
+        margin-left: 5px;
+        border-left: 1px solid #7699af;
+      }
+    }
+  }
+  &__price {
+    grid-area: price;
+    display: flex;
+    align-items: flex-start;
+    .regular {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+      text-decoration-line: line-through;
+      text-transform: capitalize;
+
+      color: #7699af;
+    }
+    .sale {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 24px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+      text-transform: capitalize;
+
+      color: #7699af;
+      margin-left: 8px;
+    }
+  }
+}
+
+.test {
+  height: 600px;
+  background: linear-gradient(
+    74.66deg,
+    #d7e6ef -5.56%,
+    #ecf0f3 36.64%,
+    #f0f0f0 100%
+  );
+  border-radius: 10px;
+  margin-top: 30px;
+  .top-slider__thumbnail {
+    img {
+      object-fit: contain;
+      object-position: right;
+    }
+  }
+  .top-slider__description {
+    max-width: 600px;
   }
 }
