@@ -526,6 +526,11 @@ a {
   width: 34px;
   height: 34px;
   padding: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.header__icon:hover {
+  opacity: 0.8;
 }
 .header__icon img {
   width: 100%;
