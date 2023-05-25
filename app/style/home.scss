@@ -32,28 +32,30 @@
     overflow: hidden;
   }
   &__title {
-    font-family: "William Subhead Pro";
-    font-style: italic;
+    font-family: "Mabry Pro";
+    font-style: normal;
     font-weight: 400;
     font-size: 48px;
-    line-height: 28px;
-    /* identical to box height, or 58% */
+    line-height: 48px;
+    /* identical to box height */
 
     display: flex;
     align-items: center;
-    text-transform: capitalize;
+    letter-spacing: 1.1px;
 
-    color: #7699af;
+    color: #364e5c;
   }
   &__description {
     font-family: "Mabry Pro";
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 140.62%;
-    /* or 28px */
+    font-size: 18px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1.5px;
 
-    color: #7699af;
+    color: #364e5c;
     margin-top: 30px;
     max-width: 425px;
   }
@@ -88,6 +90,11 @@
     height: fit-content;
     position: relative;
     z-index: 1;
+    transition: 0.3s;
+    &:hover {
+      background: #7699af;
+      color: #f5f5f7;
+    }
   }
   &__thumbnail {
     position: absolute;
@@ -144,13 +151,13 @@
     #f0f0f0 100%
   );
   border-radius: 10px;
+  height: 500px;
   &__status {
     position: absolute;
-    top: 24px;
-    left: 24px;
-    width: 90px;
-    height: 90px;
-    border-radius: 90px;
+    top: 40px;
+    left: 0px;
+    padding: 10px 50px;
+    border-radius: 0px 80px 80px 0px;
     font-family: "Mabry Pro";
     font-style: normal;
     font-weight: 500;
@@ -166,33 +173,136 @@
 
     color: #f7f3ea;
 
-    transform: rotate(-15deg);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: 0.3s;
     &.sale {
-      background: #d43246;
+      background: linear-gradient(
+        90deg,
+        rgba(227, 13, 51, 0.8) 0%,
+        rgba(227, 13, 51, 0.696) 100%
+      );
     }
   }
   &__thumbnail {
     width: 100%;
     height: 350px;
+    position: relative;
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       object-position: center;
+      transition: 0.3s;
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+      }
     }
   }
+  &__container {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+  }
   &__content {
-    padding: 15px 25px 50px 25px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-      "title ."
-      "tags  price";
-    gap: 15px;
+    padding: 15px 25px 25px 25px;
+    transition: 0.3s;
+    &.main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "title ."
+        "tags  price";
+      gap: 15px;
+    }
+    &.hover {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 15px;
+      width: 100%;
+    }
+  }
+  &__add-to-favorites {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    z-index: 2;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__variations {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    li {
+      display: block;
+      padding: 15px;
+
+      border-radius: 40px;
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 18px;
+      text-transform: capitalize;
+
+      /* White */
+
+      color: #364e5c;
+      &.active {
+        background: #7699af;
+        color: #f5f5f7;
+      }
+    }
+  }
+  &__add-to-cart {
+    width: 100%;
+    padding: 15px;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.02em;
+
+    /* White */
+
+    color: #f5f5f7;
+    background: #7699af;
+    border-top: 0.5px solid #7699af;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    span {
+      margin-left: 5px;
+    }
   }
   &__title {
     grid-area: title;
@@ -258,6 +368,38 @@
       margin-left: 8px;
     }
   }
+  &:hover {
+    .shop-item__content {
+      &.hover {
+        opacity: 1;
+        visibility: visible;
+      }
+      &.main {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    .shop-item__thumbnail {
+      img {
+        &:nth-child(1) {
+          opacity: 0;
+          visibility: hidden;
+        }
+        &:nth-child(2) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    .shop-item__status {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .shop-item__add-to-favorites {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
 .test {
@@ -274,6 +416,7 @@
     img {
       object-fit: contain;
       object-position: right;
+      border-radius: 0 10px 10px 0;
     }
   }
   .top-slider__description {
@@ -374,5 +517,10 @@
     padding: 19px 54px;
     border: 2px solid #7699af;
     border-radius: 30px;
+    transition: 0.3s;
+    &:hover {
+      color: #f5f5f7;
+      background: #7699af;
+    }
   }
 }

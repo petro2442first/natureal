@@ -75,10 +75,7 @@
         font-weight: 300;
         font-size: 18px;
         line-height: 18px;
-        /* identical to box height */
-
         text-transform: capitalize;
-
         color: #7699af;
       }
     }
@@ -109,10 +106,7 @@
         font-weight: 300;
         font-size: 14px;
         line-height: 14px;
-        /* identical to box height */
-
         text-transform: capitalize;
-
         color: rgba(118, 153, 175, 0.7);
       }
     }
@@ -127,10 +121,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    /* identical to box height */
-
     text-align: center;
-
     color: #7699af;
     img {
       margin-left: 5px;
@@ -144,11 +135,8 @@
     font-weight: 400;
     font-size: 32px;
     line-height: 28px;
-    /* identical to box height, or 88% */
-
     display: flex;
     align-items: center;
-
     color: #7699af;
   }
   &__field {
