@@ -27,23 +27,113 @@
     justify-content: space-between;
   }
   &__menus {
+    margin-top: 30px;
+    padding: 0 60px;
+    position: relative;
   }
   &__payment-methods {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
     li {
       img {
+        width: 60px;
+        height: 40px;
+        object-fit: contain;
+        object-position: 0 0;
+        display: block;
       }
     }
   }
   &__primary-menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 65px;
     li {
+      position: relative;
+      & + li {
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: -33px;
+          height: 100%;
+          width: 1px;
+          background: #7699af;
+        }
+      }
       a {
+        font-family: "Mabry Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 18px;
+        /* identical to box height */
+
+        text-transform: capitalize;
+
+        color: #7699af;
       }
     }
   }
   &__secondary-menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 49px;
+    margin-top: 30px;
     li {
-      a {
+      position: relative;
+      & + li {
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: -25px;
+          height: 100%;
+          width: 1px;
+          background: rgba(118, 153, 175, 0.7);
+        }
       }
+      a {
+        font-family: "Mabry Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+        /* identical to box height */
+
+        text-transform: capitalize;
+
+        color: rgba(118, 153, 175, 0.7);
+      }
+    }
+  }
+  &__copyright {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #7699af;
+    img {
+      margin-left: 5px;
     }
   }
 }
@@ -95,10 +185,27 @@
   }
 }
 .socials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 10px;
   &__item {
+    display: flex;
+    align-items: center;
     span {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 18px;
+      color: #7699af;
     }
     img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      margin-left: 10px;
     }
   }
 }

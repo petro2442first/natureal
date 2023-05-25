@@ -972,6 +972,107 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+.footer__menus {
+  margin-top: 30px;
+  padding: 0 60px;
+  position: relative;
+}
+.footer__payment-methods {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.footer__payment-methods li img {
+  width: 60px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: 0 0;
+     object-position: 0 0;
+  display: block;
+}
+.footer__primary-menu {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 65px;
+}
+.footer__primary-menu li {
+  position: relative;
+}
+.footer__primary-menu li + li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -33px;
+  height: 100%;
+  width: 1px;
+  background: #7699af;
+}
+.footer__primary-menu li a {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 18px;
+  /* identical to box height */
+  text-transform: capitalize;
+  color: #7699af;
+}
+.footer__secondary-menu {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 49px;
+  margin-top: 30px;
+}
+.footer__secondary-menu li {
+  position: relative;
+}
+.footer__secondary-menu li + li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -25px;
+  height: 100%;
+  width: 1px;
+  background: rgba(118, 153, 175, 0.7);
+}
+.footer__secondary-menu li a {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  /* identical to box height */
+  text-transform: capitalize;
+  color: rgba(118, 153, 175, 0.7);
+}
+.footer__copyright {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height */
+  text-align: center;
+  color: #7699af;
+}
+.footer__copyright img {
+  margin-left: 5px;
+}
+
 .subscribe-form__title {
   font-family: "William Subhead Pro";
   font-style: italic;
@@ -1014,4 +1115,32 @@ button {
   background: #7699af;
   border-radius: 0px 30px 30px 0px;
   border: 0;
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 10px;
+}
+.socials__item {
+  display: flex;
+  align-items: center;
+}
+.socials__item span {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  color: #7699af;
+}
+.socials__item img {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+  margin-left: 10px;
 }
