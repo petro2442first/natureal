@@ -37,8 +37,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
     // loop: true,
     spaceBetween: 30,
     navigation: {
-      nextEl: ".shop-slider__next",
-      prevEl: ".shop-slider__prev"
+      nextEl: "#shop-slider__next",
+      prevEl: "#shop-slider__prev"
+    }
+  });
+  initSlider("#reviews-slider", {
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+    navigation: {
+      nextEl: "#reviews-slider__next",
+      prevEl: "#reviews-slider__prev"
     }
   });
 });

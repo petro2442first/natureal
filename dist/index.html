@@ -69,7 +69,7 @@
         </div>
       </header>
       <main class="main-container">
-        <div class="top-slider swiper">
+        <div class="top-slider swiper" id="top-slider">
           <div class="swiper-wrapper">
             <div class="top-slider__item swiper-slide">
               <div class="top-slider__content">
@@ -113,7 +113,7 @@
           </div>
           <div class="swiper-pagination top-slider__pagination"></div>
         </div>
-        <div class="shop-slider swiper">
+        <div class="shop-slider swiper" id="shop-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide shop-item">
               <div class="shop-item__status sale">SALE</div>
@@ -184,8 +184,8 @@
               </div>
             </div>
           </div>
-          <div class="swiper-button-prev shop-slider__prev"></div>
-          <div class="swiper-button-next shop-slider__next"></div>
+          <div class="swiper-button-prev" id="shop-slider__prev"></div>
+          <div class="swiper-button-next" id="shop-slider__next"></div>
         </div>
         <div class="test">
           <div class="top-slider__item">
@@ -202,7 +202,152 @@
             </div>
           </div>
         </div>
+        <div class="our-philosophy">
+          <div class="top-slider__item">
+            <div class="top-slider__content">
+              <div class="top-slider__title">Наша філософія</div>
+              <div class="top-slider__description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </div>
+            <div class="top-slider__thumbnail">
+              <img src="assets/images/philosophy.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="reviews-slider top-slider swiper" id="reviews-slider">
+          <div class="swiper-wrapper">
+            <div class="reviews-slider__item swiper-slide">
+              <div class="reviews-slider__thumbnail">
+                <img src="assets/images/bottom-slide-1.png" alt="" />
+              </div>
+              <div class="reviews-slider__col">
+                <div class="reviews-slider__content">
+                  <div class="reviews-slider__title">Лідія, 28 років</div>
+                  <div class="reviews-slider__description">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet Consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      magna aliqua.
+                    </p>
+                  </div>
+                </div>
+                <a href="#" class="reviews-slider__link">Більше</a>
+              </div>
+            </div>
+            <div class="reviews-slider__item swiper-slide">
+              <div class="reviews-slider__thumbnail">
+                <img src="assets/images/bottom-slide-1.png" alt="" />
+              </div>
+              <div class="reviews-slider__col">
+                <div class="reviews-slider__content">
+                  <div class="reviews-slider__title">Лідія, 28 років</div>
+                  <div class="reviews-slider__description">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet Consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      magna aliqua.
+                    </p>
+                  </div>
+                </div>
+                <a href="#" class="reviews-slider__link">Більше</a>
+              </div>
+            </div>
+            <div class="reviews-slider__item swiper-slide">
+              <div class="reviews-slider__thumbnail">
+                <img src="assets/images/bottom-slide-1.png" alt="" />
+              </div>
+              <div class="reviews-slider__col">
+                <div class="reviews-slider__content">
+                  <div class="reviews-slider__title">Лідія, 28 років</div>
+                  <div class="reviews-slider__description">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet Consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      magna aliqua.
+                    </p>
+                  </div>
+                </div>
+                <a href="#" class="reviews-slider__link">Більше</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev" id="reviews-slider__prev"></div>
+          <div class="swiper-button-next" id="reviews-slider__next"></div>
+        </div>
       </main>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__row">
+            <div class="subscribe-form">
+              <div class="subscribe-form__title">
+                Підпишіться задля новинок та акцій
+              </div>
+              <form action="#" class="subscribe-form__field">
+                <input type="text" placeholder="Email" />
+                <button type="submit">Надіслати</button>
+              </form>
+            </div>
+            <div class="socials">
+              <a href="#" class="socials__item">
+                <span>Наш Telegram </span>
+                <img src="assets/images/icons/telegram.svg" alt="" />
+              </a>
+              <a href="#" class="socials__item">
+                <span>Наш Instagram</span>
+                <img src="assets/images/icons/instagram.svg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="footer__menus">
+            <ul class="footer__payment-methods">
+              <li><img src="assets/images/icons/mastercard.svg" alt="" /></li>
+              <li><img src="assets/images/icons/visa.svg" alt="" /></li>
+            </ul>
+            <ul class="footer__primary-menu">
+              <li><a href="#">Догляд</a></li>
+              <li><a href="#">Обличчя</a></li>
+              <li><a href="#">Волосся</a></li>
+              <li><a href="#">Тіло</a></li>
+              <li><a href="#">Подарунки</a></li>
+            </ul>
+            <ul class="footer__secondary-menu">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Shipping and payment</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Public offer</a></li>
+            </ul>
+          </div>
+          <div class="footer__copyright">
+            ©2023, NatuReal.&nbsp;&nbsp;Develop by
+            <img src="assets/images/icons/indev.svg" alt="" />
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="app.js"></script>
   </body>

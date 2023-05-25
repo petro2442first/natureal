@@ -13,6 +13,7 @@ html,
 body {
   width: 100%;
   background: #f5f5f7;
+  overflow-x: hidden;
 }
 
 ul,
@@ -22,6 +23,10 @@ ol {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 .wrapper {
@@ -43,3 +48,4 @@ a {
 
 @import "./header.scss";
 @import "./home.scss";
+@import "./footer.scss";

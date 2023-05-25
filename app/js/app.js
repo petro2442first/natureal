@@ -29,8 +29,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
     // loop: true,
     spaceBetween: 30,
     navigation: {
-      nextEl: ".shop-slider__next",
-      prevEl: ".shop-slider__prev",
+      nextEl: "#shop-slider__next",
+      prevEl: "#shop-slider__prev",
+    },
+  });
+  initSlider("#reviews-slider", {
+    modules: [Navigation],
+    navigation: {
+      nextEl: "#reviews-slider__next",
+      prevEl: "#reviews-slider__prev",
     },
   });
 });
