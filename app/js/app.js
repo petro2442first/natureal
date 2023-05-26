@@ -54,10 +54,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
 
   initSlider("#reviews-slider", {
-    modules: [Navigation],
+    modules: [Navigation, Pagination],
     spaceBetween: 30,
     preventClicks: false,
     allowTouchMove: false,
+    pagination: {
+      el: "#reviews-slider__pagination",
+      type: "bullets",
+      clickable: true,
+    },
     navigation: {
       nextEl: "#reviews-slider__next",
       prevEl: "#reviews-slider__prev",

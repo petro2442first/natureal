@@ -61,10 +61,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
   }
   initSlider("#reviews-slider", {
-    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
     spaceBetween: 30,
     preventClicks: false,
     allowTouchMove: false,
+    pagination: {
+      el: "#reviews-slider__pagination",
+      type: "bullets",
+      clickable: true
+    },
     navigation: {
       nextEl: "#reviews-slider__next",
       prevEl: "#reviews-slider__prev"
