@@ -619,7 +619,7 @@ button {
 .nav-menu__item {
   width: 100%;
 }
-.nav-menu__item a {
+.nav-menu__item > a {
   font-family: "Mabry Pro";
   font-style: normal;
   font-weight: 400;
@@ -631,8 +631,72 @@ button {
   color: #f5f5f7;
   transition: 0.3s;
 }
-.nav-menu__item a:hover {
+.nav-menu__item > a:hover {
   opacity: 0.8;
+}
+.nav-menu__item:hover .sub-menu {
+  visibility: visible;
+  opacity: 1;
+}
+.nav-menu .sub-menu {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.nav-menu .sub-menu__container {
+  width: 100%;
+  padding: 30px 75px;
+  background: linear-gradient(0deg, #f2f8ff, #f2f8ff), linear-gradient(71.12deg, #c7d5de -46.79%, #e3eaef 11.9%, #ecf1f4 100%);
+  border-bottom: 0.5px solid #b4c7d3;
+  border-radius: 0px 0px 10px 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.nav-menu .sub-menu__title {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  color: #364e5c;
+  position: relative;
+  padding-bottom: 25px;
+}
+.nav-menu .sub-menu__title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 80px;
+  background-image: url(assets/images/icons/divider-horizontal.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.nav-menu .sub-menu__item + li {
+  margin-top: 20px;
+}
+.nav-menu .sub-menu__item a {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height, or 117% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #364e5c;
 }
 
 .top-slider {
