@@ -26,6 +26,31 @@
   }
 }
 @media (max-width: 1024px) {
+  .wrapper {
+    padding: 16px;
+  }
+  .header {
+    &__container {
+    }
+    &__nav {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
   .shop-slider {
     max-height: 600px;
   }
@@ -61,6 +86,171 @@
     &__add-to-favorites {
       opacity: 1;
       visibility: visible;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .header {
+    &__icon {
+      width: 24px;
+      height: 24px;
+      padding: 3px;
+    }
+    &__search-btn {
+      display: none;
+    }
+    &__profile-btn {
+      display: none;
+    }
+    &__lang-btn {
+      display: none;
+    }
+    &__right-bar {
+      grid-template-columns: repeat(2, 24px);
+      gap: 10px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+    &__container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &__logo {
+      img {
+        width: 100%;
+        &.desktop {
+          display: none;
+        }
+        &.mobile {
+          display: block;
+        }
+      }
+    }
+  }
+  .top-slider {
+    height: 440px;
+    &__item {
+      padding-bottom: 55px;
+    }
+    &__title {
+      font-size: 30px;
+      line-height: 28px;
+    }
+    &__description {
+      font-size: 16px;
+      line-height: 140.62%;
+      font-weight: 300;
+      margin-top: 16px;
+    }
+    &__link {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 23px;
+      /* identical to box height, or 144% */
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      color: #f5f5f7;
+      padding: 8px 54px;
+      border: 2px solid #ffffff;
+      border-radius: 30px;
+      align-self: center;
+    }
+  }
+  .shop-slider {
+    height: auto;
+    max-height: none;
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+    .swiper-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+  .shop-item {
+    height: 545px;
+    &__title {
+      font-size: 20px;
+      line-height: 20px;
+      /* identical to box height */
+
+      color: #364e5c;
+    }
+    &__price {
+      .sale {
+        font-size: 18px;
+        line-height: 18px;
+        /* identical to box height */
+
+        letter-spacing: -0.02em;
+        text-transform: capitalize;
+
+        color: #364e5c;
+      }
+      .regular {
+        font-size: 14px;
+        line-height: 14px;
+        /* identical to box height */
+
+        letter-spacing: -0.02em;
+        text-decoration-line: line-through;
+        text-transform: capitalize;
+
+        color: #364e5c;
+      }
+    }
+    &__tags {
+      li {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+        /* identical to box height */
+
+        text-transform: capitalize;
+
+        color: #364e5c;
+      }
+    }
+    &__variations {
+      li {
+        padding: 8px;
+      }
+    }
+    &__add-to-cart {
+      padding: 10px;
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      /* identical to box height */
+
+      display: flex;
+      align-items: flex-end;
+      letter-spacing: -0.02em;
+
+      /* White */
+
+      color: #f5f5f7;
+    }
+    &__content {
+      padding: 15px;
+      &.main {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+          "title price"
+          "tags .";
+      }
     }
   }
 }

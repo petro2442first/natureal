@@ -502,6 +502,9 @@ button {
   gap: 10px;
   align-items: center;
 }
+.header__burger {
+  display: none;
+}
 .header__nav {
   display: flex;
   justify-content: flex-start;
@@ -521,6 +524,12 @@ button {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+}
+.header__logo img.desktop {
+  display: block;
+}
+.header__logo img.mobile {
+  display: none;
 }
 .header__right-bar {
   width: 100%;
@@ -672,6 +681,9 @@ button {
   letter-spacing: 1.1px;
   color: #364e5c;
 }
+.top-slider__title.dark {
+  color: #ffffff;
+}
 .top-slider__description {
   font-family: "Mabry Pro";
   font-style: normal;
@@ -684,6 +696,9 @@ button {
   color: #364e5c;
   margin-top: 30px;
   max-width: 425px;
+}
+.top-slider__description.dark {
+  color: #ffffff;
 }
 .top-slider__content {
   display: flex;
@@ -779,6 +794,7 @@ button {
 }
 .shop-item__status {
   position: absolute;
+  z-index: 3;
   top: 40px;
   left: 0px;
   padding: 10px 50px;
@@ -919,8 +935,7 @@ button {
 }
 .shop-item__title {
   grid-area: title;
-  font-family: "William Subhead Pro";
-  font-style: italic;
+  font-family: "Mabry Pro";
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
@@ -1332,6 +1347,28 @@ button {
   }
 }
 @media (max-width: 1024px) {
+  .wrapper {
+    padding: 16px;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+  }
+  .header__burger img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
+  }
   .shop-slider {
     max-height: 600px;
   }
@@ -1362,5 +1399,146 @@ button {
   .shop-item__add-to-favorites {
     opacity: 1;
     visibility: visible;
+  }
+}
+@media (max-width: 900px) {
+  .header__icon {
+    width: 24px;
+    height: 24px;
+    padding: 3px;
+  }
+  .header__search-btn {
+    display: none;
+  }
+  .header__profile-btn {
+    display: none;
+  }
+  .header__lang-btn {
+    display: none;
+  }
+  .header__right-bar {
+    grid-template-columns: repeat(2, 24px);
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+  .header__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .header__logo img {
+    width: 100%;
+  }
+  .header__logo img.desktop {
+    display: none;
+  }
+  .header__logo img.mobile {
+    display: block;
+  }
+  .top-slider {
+    height: 440px;
+  }
+  .top-slider__item {
+    padding-bottom: 55px;
+  }
+  .top-slider__title {
+    font-size: 30px;
+    line-height: 28px;
+  }
+  .top-slider__description {
+    font-size: 16px;
+    line-height: 140.62%;
+    font-weight: 300;
+    margin-top: 16px;
+  }
+  .top-slider__link {
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    /* identical to box height, or 144% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #f5f5f7;
+    padding: 8px 54px;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    align-self: center;
+  }
+  .shop-slider {
+    height: auto;
+    max-height: none;
+  }
+  .shop-slider .swiper-button-next,
+  .shop-slider .swiper-button-prev {
+    display: none;
+  }
+  .shop-slider .swiper-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .shop-item {
+    height: 545px;
+  }
+  .shop-item__title {
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #364e5c;
+  }
+  .shop-item__price .sale {
+    font-size: 18px;
+    line-height: 18px;
+    /* identical to box height */
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+    color: #364e5c;
+  }
+  .shop-item__price .regular {
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+    letter-spacing: -0.02em;
+    text-decoration-line: line-through;
+    text-transform: capitalize;
+    color: #364e5c;
+  }
+  .shop-item__tags li {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    /* identical to box height */
+    text-transform: capitalize;
+    color: #364e5c;
+  }
+  .shop-item__variations li {
+    padding: 8px;
+  }
+  .shop-item__add-to-cart {
+    padding: 10px;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.02em;
+    /* White */
+    color: #f5f5f7;
+  }
+  .shop-item__content {
+    padding: 15px;
+  }
+  .shop-item__content.main {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "title price" "tags .";
   }
 }

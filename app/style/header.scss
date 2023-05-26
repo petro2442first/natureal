@@ -12,6 +12,9 @@
     gap: 10px;
     align-items: center;
   }
+  &__burger {
+    display: none;
+  }
   &__nav {
     display: flex;
     justify-content: flex-start;
@@ -28,6 +31,12 @@
       height: 28px;
       object-fit: contain;
       object-position: center;
+      &.desktop {
+        display: block;
+      }
+      &.mobile {
+        display: none;
+      }
     }
   }
   &__right-bar {

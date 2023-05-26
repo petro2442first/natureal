@@ -24,32 +24,35 @@ document.addEventListener("DOMContentLoaded", (e) => {
     },
   });
 
-  initSlider(".shop-slider", {
-    modules: [Navigation],
-    slidesPerView: 3,
-    // loop: true,
-    spaceBetween: 30,
-    preventClicks: false,
-    // allowTouchMove: false,
-    navigation: {
-      nextEl: "#shop-slider__next",
-      prevEl: "#shop-slider__prev",
-    },
-    breakpoints: {
-      1921: {
-        slidesPerView: 4,
+  if (screen.availWidth > 768) {
+    initSlider(".shop-slider", {
+      modules: [Navigation],
+      slidesPerView: 3,
+      // loop: true,
+      spaceBetween: 30,
+      preventClicks: false,
+      // allowTouchMove: false,
+      navigation: {
+        nextEl: "#shop-slider__next",
+        prevEl: "#shop-slider__prev",
       },
-      1025: {
-        slidesPerView: 3,
+      breakpoints: {
+        1921: {
+          slidesPerView: 4,
+        },
+        1025: {
+          slidesPerView: 3,
+        },
+        769: {
+          slidesPerView: 2,
+        },
+        320: {
+          slidesPerView: 1,
+        },
       },
-      769: {
-        slidesPerView: 2,
-      },
-      320: {
-        slidesPerView: 1,
-      },
-    },
-  });
+    });
+  }
+
   initSlider("#reviews-slider", {
     modules: [Navigation],
     spaceBetween: 30,
