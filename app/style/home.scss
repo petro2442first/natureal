@@ -461,6 +461,9 @@
     #ecf0f3 36.64%,
     #f0f0f0 100%
   );
+  .swiper-pagination {
+    display: none;
+  }
   &__item {
     border-radius: 10px;
     width: 100%;

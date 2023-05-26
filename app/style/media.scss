@@ -392,4 +392,138 @@
       align-self: center;
     }
   }
+  .footer {
+    &__payment-methods {
+      &.desktop {
+        display: none;
+      }
+      &.mobile {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        margin-bottom: 16px;
+      }
+      li {
+        img {
+          width: 36px;
+          height: 23px;
+        }
+      }
+    }
+    &__row {
+      padding: 0;
+    }
+    &__menus {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0;
+    }
+    &__primary-menu {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 16px;
+      li {
+        & + li {
+          &::before {
+            content: none;
+          }
+        }
+        a {
+          font-family: "Mabry Pro";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 14px;
+          /* identical to box height */
+
+          text-transform: capitalize;
+
+          color: #364e5c;
+        }
+      }
+    }
+    &__secondary-menu {
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 0;
+      li {
+        & + li {
+          &::before {
+            content: none;
+          }
+        }
+        a {
+          font-family: "Mabry Pro";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 14px;
+          /* identical to box height */
+
+          text-transform: capitalize;
+
+          color: #364e5c;
+        }
+      }
+    }
+  }
+  .socials {
+    &.desktop {
+      display: none;
+    }
+    &.mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    &__item {
+      flex-direction: row-reverse;
+      span {
+        font-family: "Mabry Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+        /* identical to box height */
+
+        color: #364e5c;
+      }
+      img {
+        width: 16px;
+        height: 16px;
+        margin-left: 0;
+        margin-right: 8px;
+      }
+    }
+  }
+  .subscribe-form {
+    &__title {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      /* or 117% */
+
+      display: flex;
+      align-items: center;
+
+      color: #364e5c;
+    }
+    &__field {
+      input {
+        padding: 15px;
+        font-size: 14px;
+        line-height: 14px;
+        width: 100%;
+        max-width: 300px;
+      }
+      button {
+        padding: 15px 20px;
+        font-size: 14px;
+        line-height: 14px;
+      }
+    }
+  }
 }

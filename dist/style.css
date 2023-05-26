@@ -1059,6 +1059,9 @@ button {
   border-radius: 10px;
   background: linear-gradient(74.66deg, #d7e6ef -5.56%, #ecf0f3 36.64%, #f0f0f0 100%);
 }
+.reviews-slider .swiper-pagination {
+  display: none;
+}
 .reviews-slider__item {
   border-radius: 10px;
   width: 100%;
@@ -1134,7 +1137,7 @@ button {
 }
 
 .footer {
-  padding: 60px 30px 0 30px;
+  padding: 60px 0px 0 0px;
   position: relative;
   width: 100%;
 }
@@ -1176,6 +1179,9 @@ button {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
+}
+.footer__payment-methods.mobile {
+  display: none;
 }
 .footer__payment-methods li img {
   width: 60px;
@@ -1248,6 +1254,8 @@ button {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   font-family: "Mabry Pro";
   font-style: normal;
   font-weight: 400;
@@ -1256,13 +1264,17 @@ button {
   text-align: center;
   color: #7699af;
 }
+.footer__copyright div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .footer__copyright img {
   margin-left: 5px;
 }
 
 .subscribe-form__title {
-  font-family: "William Subhead Pro";
-  font-style: italic;
+  font-family: "Mabry Pro";
   font-weight: 400;
   font-size: 32px;
   line-height: 28px;
@@ -1307,6 +1319,9 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px 10px;
+}
+.socials.mobile {
+  display: none;
 }
 .socials__item {
   display: flex;
@@ -1673,5 +1688,112 @@ button {
     color: #364e5c;
     padding: 8px 54px;
     align-self: center;
+  }
+  .footer__payment-methods.desktop {
+    display: none;
+  }
+  .footer__payment-methods.mobile {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin-bottom: 16px;
+  }
+  .footer__payment-methods li img {
+    width: 36px;
+    height: 23px;
+  }
+  .footer__row {
+    padding: 0;
+  }
+  .footer__menus {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+  }
+  .footer__primary-menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+  .footer__primary-menu li + li::before {
+    content: none;
+  }
+  .footer__primary-menu li a {
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+    text-transform: capitalize;
+    color: #364e5c;
+  }
+  .footer__secondary-menu {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 0;
+  }
+  .footer__secondary-menu li + li::before {
+    content: none;
+  }
+  .footer__secondary-menu li a {
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+    text-transform: capitalize;
+    color: #364e5c;
+  }
+  .socials.desktop {
+    display: none;
+  }
+  .socials.mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .socials__item {
+    flex-direction: row-reverse;
+  }
+  .socials__item span {
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+    color: #364e5c;
+  }
+  .socials__item img {
+    width: 16px;
+    height: 16px;
+    margin-left: 0;
+    margin-right: 8px;
+  }
+  .subscribe-form__title {
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    /* or 117% */
+    display: flex;
+    align-items: center;
+    color: #364e5c;
+  }
+  .subscribe-form__field input {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 14px;
+    width: 100%;
+    max-width: 300px;
+  }
+  .subscribe-form__field button {
+    padding: 15px 20px;
+    font-size: 14px;
+    line-height: 14px;
   }
 }
