@@ -36,10 +36,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     initSlider(".shop-slider", {
       modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
       slidesPerView: 3,
-      // loop: true,
       spaceBetween: 30,
       preventClicks: false,
-      // allowTouchMove: false,
       navigation: {
         nextEl: "#shop-slider__next",
         prevEl: "#shop-slider__prev"
@@ -64,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
     spaceBetween: 30,
     preventClicks: false,
-    allowTouchMove: false,
     pagination: {
       el: "#reviews-slider__pagination",
       type: "bullets",
@@ -73,6 +70,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
     navigation: {
       nextEl: "#reviews-slider__next",
       prevEl: "#reviews-slider__prev"
+    }
+  });
+  document.addEventListener("scroll", function (e) {
+    var scrollTop = document.documentElement.scrollTop;
+    var header = document.querySelector(".header");
+    if (scrollTop > 0) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
     }
   });
 });

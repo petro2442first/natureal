@@ -28,10 +28,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     initSlider(".shop-slider", {
       modules: [Navigation],
       slidesPerView: 3,
-      // loop: true,
       spaceBetween: 30,
       preventClicks: false,
-      // allowTouchMove: false,
       navigation: {
         nextEl: "#shop-slider__next",
         prevEl: "#shop-slider__prev",
@@ -57,7 +55,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     modules: [Navigation, Pagination],
     spaceBetween: 30,
     preventClicks: false,
-    allowTouchMove: false,
     pagination: {
       el: "#reviews-slider__pagination",
       type: "bullets",
@@ -67,5 +64,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
       nextEl: "#reviews-slider__next",
       prevEl: "#reviews-slider__prev",
     },
+  });
+
+  document.addEventListener("scroll", (e) => {
+    const scrollTop = document.documentElement.scrollTop;
+
+    const header = document.querySelector(".header");
+
+    if (scrollTop > 0) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
   });
 });
