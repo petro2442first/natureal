@@ -94,6 +94,256 @@
       visibility: visible;
     }
   }
+
+  .product-info {
+    grid-template-columns: 1fr;
+    &__status {
+      top: 15px;
+      padding: 10px 50px;
+      span {
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+    &__add-to-favorites {
+      top: 15px;
+      right: 15px;
+    }
+    &__content {
+      padding: 0;
+    }
+    &__price {
+      &.mobile {
+        display: flex;
+      }
+      &.desktop {
+        display: none;
+      }
+    }
+    &__count {
+      display: none;
+    }
+    &__add-to-cart {
+      button {
+        border-radius: 30px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+      }
+    }
+    &__reviews {
+      display: none;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+  .product-thumbnails {
+    height: 380px;
+  }
+  .product-features {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    height: fit-content;
+    &__thumbnail {
+      height: 380px;
+      img {
+        border-radius: 10px 10px 0 0;
+      }
+    }
+    &__content {
+      padding: 15px;
+    }
+    &__title {
+      font-size: 30px;
+      line-height: 30px;
+    }
+    &__list {
+      li {
+        flex-direction: column;
+        align-items: flex-start;
+        p {
+          &:nth-child(1) {
+            font-size: 16px;
+            line-height: 26px;
+          }
+          &:nth-child(2) {
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+  .product-features-slider {
+    &__item {
+      grid-template-columns: 1fr;
+    }
+    &__thumbnail {
+      display: none;
+    }
+    &__content {
+      padding: 15px;
+      padding-bottom: 80px;
+    }
+    &__images {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 0;
+      img {
+        &:nth-child(1) {
+          grid-column: 1/3;
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+    &__btns {
+      left: 0;
+      width: 100%;
+      bottom: 15px;
+    }
+    &__title {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 30px;
+      /* identical to box height */
+
+      display: flex;
+      align-items: center;
+
+      color: #364e5c;
+      margin-top: 15px;
+    }
+    &__description {
+      p {
+        font-family: "Mabry Pro";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #364e5c;
+      }
+      ul {
+        li {
+          font-family: "Mabry Pro";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+
+          color: #364e5c;
+        }
+      }
+    }
+    .swiper-pagination {
+      display: none;
+    }
+  }
+  .featured-products {
+    grid-template-columns: 1fr;
+    &__content {
+      padding: 0;
+    }
+    &__title {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 30px;
+      letter-spacing: 0.4px;
+
+      color: #364e5c;
+    }
+    &__description {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      color: #364e5c;
+      p {
+        font-family: "Mabry Pro";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #364e5c;
+      }
+    }
+  }
+  .product-reviews {
+    padding: 30px 15px;
+    .review-item {
+      flex-direction: column;
+      &__media {
+        li {
+          width: 72px;
+          height: 72px;
+          &.video {
+            &::after {
+              top: calc(50% - 16px);
+              left: calc(50% - 16px);
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: fit-content;
+    &__content {
+      padding: 15px;
+    }
+    &__title {
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 30px;
+      /* identical to box height */
+
+      display: flex;
+      align-items: center;
+
+      color: #364e5c;
+    }
+    &__row {
+      gap: 15px;
+      grid-template-columns: 1fr;
+    }
+    &__radiobox {
+      .review-form__row {
+        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &__btns {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__add-media {
+      width: 100%;
+    }
+    &__submit {
+      width: 100%;
+    }
+  }
 }
 @media (max-width: 900px) {
   .header {

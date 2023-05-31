@@ -16,8 +16,9 @@ function initSlider(selector, options) {
   var container = (_document$querySelect = document.querySelector(selector)) !== null && _document$querySelect !== void 0 ? _document$querySelect : null;
   if (container === null) return;
   var slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](container, options);
+  return slider;
 }
-document.addEventListener("DOMContentLoaded", function (e) {
+function home() {
   initSlider(".top-slider", {
     modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade],
     effect: "fade",
@@ -33,30 +34,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   });
   if (screen.availWidth > 768) {
-    initSlider(".shop-slider", {
-      modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
-      slidesPerView: 3,
-      spaceBetween: 30,
-      preventClicks: false,
-      navigation: {
-        nextEl: "#shop-slider__next",
-        prevEl: "#shop-slider__prev"
-      },
-      breakpoints: {
-        1921: {
-          slidesPerView: 4
+    var _document$querySelect2;
+    var shopSlider = (_document$querySelect2 = document.querySelector(".shop-slider")) !== null && _document$querySelect2 !== void 0 ? _document$querySelect2 : null;
+    if (shopSlider !== null) {
+      var slidesPerView = shopSlider.classList.contains("shop-slider--2") ? 2 : 3;
+      initSlider(".shop-slider", {
+        modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+        slidesPerView: slidesPerView,
+        spaceBetween: 30,
+        preventClicks: false,
+        navigation: {
+          nextEl: "#shop-slider__next",
+          prevEl: "#shop-slider__prev"
         },
-        1025: {
-          slidesPerView: 3
-        },
-        769: {
-          slidesPerView: 2
-        },
-        320: {
-          slidesPerView: 1
+        breakpoints: {
+          1921: {
+            slidesPerView: slidesPerView + 1
+          },
+          1025: {
+            slidesPerView: slidesPerView
+          },
+          769: {
+            slidesPerView: slidesPerView - 1
+          },
+          320: {
+            slidesPerView: 1
+          }
         }
-      }
-    });
+      });
+    }
   }
   initSlider("#reviews-slider", {
     modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
@@ -72,6 +78,44 @@ document.addEventListener("DOMContentLoaded", function (e) {
       prevEl: "#reviews-slider__prev"
     }
   });
+}
+function productFeatures() {
+  initSlider(".product-features-slider", {
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay],
+    navigation: {
+      nextEl: "#features-next",
+      prevEl: "#features-prev"
+    },
+    pagination: {
+      el: "#features-pagination",
+      type: "bullets",
+      clickable: true
+    }
+  });
+}
+function product() {
+  var thumbsSlider = initSlider(".product-thumbnails__thumbs", {
+    slidesPerView: 5,
+    spaceBetween: 10
+  });
+  initSlider(".product-thumbnails", {
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade],
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay: {
+      delay: 5000
+    },
+    thumbs: {
+      swiper: thumbsSlider
+    }
+  });
+  productFeatures();
+}
+document.addEventListener("DOMContentLoaded", function (e) {
+  home();
+  product();
   document.addEventListener("scroll", function (e) {
     var scrollTop = document.documentElement.scrollTop;
     var header = document.querySelector(".header");
