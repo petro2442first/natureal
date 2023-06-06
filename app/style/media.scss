@@ -373,6 +373,9 @@
 @media (max-width: 768px) {
   .header {
     padding: 10px;
+    &.fixed {
+      padding: 10px;
+    }
     &__container {
       grid-template-columns: repeat(3, 1fr);
     }

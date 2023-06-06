@@ -14,7 +14,44 @@ function initSlider(selector, options) {
   const slider = new Swiper(container, options);
   return slider;
 }
+function header() {
+  const searchBtn = document.querySelector(".header__search-btn img") ?? null;
+  if (searchBtn !== null) {
+    searchBtn.addEventListener("click", (e) => {
+      searchBtn.parentElement.classList.toggle("open");
+    });
+  }
 
+  function mobileMenu() {
+    const burger = document.querySelector(".header__burger") ?? null;
+    const mobileMenu = document.querySelector(".mobile-menu") ?? null;
+
+    if (burger !== null && mobileMenu !== null) {
+      burger.addEventListener("click", (e) => {
+        mobileMenu.classList.add("show");
+        document.body.style = "overflow:hidden";
+      });
+
+      const mobileMenuCloseBtn = document.querySelector(".mobile-menu__close");
+
+      mobileMenuCloseBtn.addEventListener("click", (e) => {
+        mobileMenu.classList.remove("show");
+        document.body.style = "";
+      });
+
+      const mobileMenuItems = document.querySelectorAll(
+        ".mobile-menu__item > a"
+      );
+      mobileMenuItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          item.parentElement.classList.toggle("show-sub-menu");
+        });
+      });
+    }
+  }
+  mobileMenu();
+}
 function home() {
   initSlider(".top-slider", {
     modules: [Pagination, Autoplay, EffectFade],
@@ -115,6 +152,7 @@ function product() {
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
+  header();
   home();
   product();
 

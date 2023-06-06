@@ -18,6 +18,39 @@ function initSlider(selector, options) {
   var slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](container, options);
   return slider;
 }
+function header() {
+  var _document$querySelect2;
+  var searchBtn = (_document$querySelect2 = document.querySelector(".header__search-btn img")) !== null && _document$querySelect2 !== void 0 ? _document$querySelect2 : null;
+  if (searchBtn !== null) {
+    searchBtn.addEventListener("click", function (e) {
+      searchBtn.parentElement.classList.toggle("open");
+    });
+  }
+  function mobileMenu() {
+    var _document$querySelect3, _document$querySelect4;
+    var burger = (_document$querySelect3 = document.querySelector(".header__burger")) !== null && _document$querySelect3 !== void 0 ? _document$querySelect3 : null;
+    var mobileMenu = (_document$querySelect4 = document.querySelector(".mobile-menu")) !== null && _document$querySelect4 !== void 0 ? _document$querySelect4 : null;
+    if (burger !== null && mobileMenu !== null) {
+      burger.addEventListener("click", function (e) {
+        mobileMenu.classList.add("show");
+        document.body.style = "overflow:hidden";
+      });
+      var mobileMenuCloseBtn = document.querySelector(".mobile-menu__close");
+      mobileMenuCloseBtn.addEventListener("click", function (e) {
+        mobileMenu.classList.remove("show");
+        document.body.style = "";
+      });
+      var mobileMenuItems = document.querySelectorAll(".mobile-menu__item > a");
+      mobileMenuItems.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+          item.parentElement.classList.toggle("show-sub-menu");
+        });
+      });
+    }
+  }
+  mobileMenu();
+}
 function home() {
   initSlider(".top-slider", {
     modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade],
@@ -34,8 +67,8 @@ function home() {
     }
   });
   if (screen.availWidth > 768) {
-    var _document$querySelect2;
-    var shopSlider = (_document$querySelect2 = document.querySelector(".shop-slider")) !== null && _document$querySelect2 !== void 0 ? _document$querySelect2 : null;
+    var _document$querySelect5;
+    var shopSlider = (_document$querySelect5 = document.querySelector(".shop-slider")) !== null && _document$querySelect5 !== void 0 ? _document$querySelect5 : null;
     if (shopSlider !== null) {
       var slidesPerView = shopSlider.classList.contains("shop-slider--2") ? 2 : 3;
       initSlider(".shop-slider", {
@@ -114,6 +147,7 @@ function product() {
   productFeatures();
 }
 document.addEventListener("DOMContentLoaded", function (e) {
+  header();
   home();
   product();
   document.addEventListener("scroll", function (e) {
