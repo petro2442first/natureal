@@ -15,7 +15,9 @@ body {
   background: #f5f5f7;
   overflow-x: hidden;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 ul,
 ol {
   list-style: none;
@@ -62,6 +64,7 @@ input[type="number"] {
 @import "./header.scss";
 @import "./home.scss";
 @import "./product.scss";
+@import "./popup.scss";
 @import "./footer.scss";
 
 @import "./media.scss";

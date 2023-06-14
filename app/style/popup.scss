@@ -1,0 +1,273 @@
+%form-input {
+  padding-top: 25px;
+  position: relative;
+  width: 100%;
+  label {
+    position: absolute;
+    top: calc(100% - 35px);
+    left: 10px;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+
+    color: #6c7d87;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 0;
+  }
+  input {
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #1d1d1f;
+    background: transparent;
+    width: 100%;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #1d1d1f;
+    outline: 0;
+    position: relative;
+    z-index: 1;
+  }
+  &.input {
+    label {
+      top: 10px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}
+
+%form-btn {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height, or 128% */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* Black */
+
+  color: #1d1d1f;
+  padding: 14px;
+  width: 100%;
+  border: 1px solid #1d1d1f;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(#000, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: 0.3s;
+  &.open {
+    z-index: 99999;
+    opacity: 1;
+    visibility: visible;
+  }
+  &__container {
+    background: #ebebeb;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    transition: 0.3s;
+  }
+  &__close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+    }
+  }
+  &__title {
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #1d1d1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+.login {
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  &__input {
+    @extend %form-input;
+  }
+  &__forgot-pswrd {
+    align-self: flex-end;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 13px;
+    /* identical to box height, or 93% */
+
+    display: flex;
+    align-items: center;
+    text-align: right;
+    text-transform: uppercase;
+
+    /* Black */
+
+    color: #1d1d1f;
+  }
+  &__divider {
+    margin-top: 30px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+
+    /* Black */
+
+    color: #1d1d1f;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 1px);
+      height: 2px;
+      background: linear-gradient(
+        270deg,
+        #48687b 0%,
+        rgba(72, 104, 123, 0) 100%
+      );
+      width: 200px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: calc(50% - 1px);
+      height: 2px;
+      background: linear-gradient(
+        270deg,
+        rgba(72, 104, 123, 0) 0%,
+        #48687b 100%
+      );
+      width: 200px;
+    }
+  }
+  &__socials {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 48px;
+      height: 48px;
+      display: block;
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
+  &__terms {
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #1d1d1f;
+    margin-top: 15px;
+    a {
+      display: inline;
+      font-family: "Mabry Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+
+      color: #1d1d1f;
+      border-bottom: 1px solid #1d1d1f;
+      margin: 0 3px;
+    }
+  }
+
+  &__submit {
+    @extend %form-btn;
+  }
+  &__register-link {
+    @extend %form-btn;
+    margin-top: -10px;
+  }
+}
+
+.restore-pswrd {
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  &__input {
+    @extend %form-input;
+  }
+  &__submit {
+    @extend %form-btn;
+  }
+  &__message {
+    display: none;
+    font-family: "Mabry Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1d1d1f;
+    &.show {
+      display: block;
+    }
+  }
+}

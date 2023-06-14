@@ -456,6 +456,10 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 ul,
 ol {
   list-style: none;
@@ -512,7 +516,7 @@ input[type=number] {
   -webkit-backdrop-filter: blur(10px) brightness(80%);
           backdrop-filter: blur(10px) brightness(80%);
   transition: 0.3s;
-  z-index: 99999;
+  z-index: 9999;
 }
 .header.fixed {
   position: fixed;
@@ -2434,6 +2438,246 @@ input[type=number] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.restore-pswrd__input, .login__input {
+  padding-top: 25px;
+  position: relative;
+  width: 100%;
+}
+.restore-pswrd__input label, .login__input label {
+  position: absolute;
+  top: calc(100% - 35px);
+  left: 10px;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #6c7d87;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 0;
+}
+.restore-pswrd__input input, .login__input input {
+  padding: 10px;
+  border: 0;
+  border-bottom: 1px solid #1d1d1f;
+  background: transparent;
+  width: 100%;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #1d1d1f;
+  outline: 0;
+  position: relative;
+  z-index: 1;
+}
+.input.restore-pswrd__input label, .input.login__input label {
+  top: 10px;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.restore-pswrd__submit, .login__register-link, .login__submit {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height, or 128% */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Black */
+  color: #1d1d1f;
+  padding: 14px;
+  width: 100%;
+  border: 1px solid #1d1d1f;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: 0.3s;
+}
+.popup.open {
+  z-index: 99999;
+  opacity: 1;
+  visibility: visible;
+}
+.popup__container {
+  background: #ebebeb;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  transition: 0.3s;
+}
+.popup__close {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+.popup__close img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center center;
+     object-position: center center;
+  display: block;
+}
+.popup__title {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #1d1d1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 40px;
+}
+.login__forgot-pswrd {
+  align-self: flex-end;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 13px;
+  /* identical to box height, or 93% */
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  /* Black */
+  color: #1d1d1f;
+}
+.login__divider {
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  /* Black */
+  color: #1d1d1f;
+}
+.login__divider::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 1px);
+  height: 2px;
+  background: linear-gradient(270deg, #48687b 0%, rgba(72, 104, 123, 0) 100%);
+  width: 200px;
+}
+.login__divider::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 1px);
+  height: 2px;
+  background: linear-gradient(270deg, rgba(72, 104, 123, 0) 0%, #48687b 100%);
+  width: 200px;
+}
+.login__socials {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.login__socials img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.login__terms {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1d1d1f;
+  margin-top: 15px;
+}
+.login__terms a {
+  display: inline;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1d1d1f;
+  border-bottom: 1px solid #1d1d1f;
+  margin: 0 3px;
+}
+.login__register-link {
+  margin-top: -10px;
+}
+
+.restore-pswrd__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+.restore-pswrd__message {
+  display: none;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1d1d1f;
+}
+.restore-pswrd__message.show {
+  display: block;
 }
 
 .footer {

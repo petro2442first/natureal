@@ -10,7 +10,7 @@
   backdrop-filter: blur(10px) brightness(80%);
   transition: 0.3s;
 
-  z-index: 99999;
+  z-index: 9999;
   &.fixed {
     position: fixed;
     top: 0;

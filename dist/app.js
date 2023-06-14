@@ -11,6 +11,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
+var validateEmail = function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
 function initSlider(selector, options) {
   var _document$querySelect;
   var container = (_document$querySelect = document.querySelector(selector)) !== null && _document$querySelect !== void 0 ? _document$querySelect : null;
@@ -146,10 +149,81 @@ function product() {
   });
   productFeatures();
 }
+function popups() {
+  var _document$querySelect6, _document$querySelect9;
+  var showPopupClass = "open";
+  var closeBtns = (_document$querySelect6 = document.querySelectorAll(".popup__close")) !== null && _document$querySelect6 !== void 0 ? _document$querySelect6 : null;
+  if (closeBtns) {
+    closeBtns.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        var parent = btn.parentElement.parentElement;
+        if (parent.classList.contains("popup")) {
+          parent.classList.remove(showPopupClass);
+          document.documentElement.style = "";
+        }
+      });
+    });
+  }
+  function openPopup(selector) {
+    var _document$querySelect7;
+    var popup = (_document$querySelect7 = document.querySelector(selector)) !== null && _document$querySelect7 !== void 0 ? _document$querySelect7 : null;
+    if (popup && popup !== null && popup !== void 0 && popup.classList.contains("popup")) {
+      popup.classList.add(showPopupClass);
+      document.documentElement.style.overflow = "hidden";
+    }
+  }
+  function formInputs() {
+    var _document$querySelect8;
+    var selectors = ".login__input, .restore-pswrd__input";
+    var inputs = (_document$querySelect8 = document.querySelectorAll(selectors)) !== null && _document$querySelect8 !== void 0 ? _document$querySelect8 : null;
+    if (inputs) {
+      inputs.forEach(function (item) {
+        var input = item.querySelector("input");
+        var label = item.querySelector("label");
+        input.addEventListener("input", function (e) {
+          item.classList.add("input");
+        });
+        input.addEventListener("focusout", function (e) {
+          if (input.value.length == 0) {
+            item.classList.remove("input");
+          }
+        });
+      });
+    }
+  }
+  formInputs();
+  var profileBtn = (_document$querySelect9 = document.querySelector(".header__profile-btn")) !== null && _document$querySelect9 !== void 0 ? _document$querySelect9 : null;
+  if (profileBtn) {
+    profileBtn.addEventListener("click", function (e) {
+      openPopup(".login");
+    });
+  }
+  function restorePassword() {
+    var _document$querySelect10, _document$querySelect11;
+    var submitBtn = (_document$querySelect10 = document.querySelector(".restore-pswrd__submit")) !== null && _document$querySelect10 !== void 0 ? _document$querySelect10 : null;
+    var email = (_document$querySelect11 = document.querySelector(".restore-pswrd__input input")) !== null && _document$querySelect11 !== void 0 ? _document$querySelect11 : null;
+    if (submitBtn) {
+      submitBtn.addEventListener("click", function (e) {
+        if (validateEmail(email === null || email === void 0 ? void 0 : email.value)) {
+          var _document$querySelect12;
+          var msg = (_document$querySelect12 = document.querySelector(".restore-pswrd__message")) !== null && _document$querySelect12 !== void 0 ? _document$querySelect12 : null;
+          if (msg) {
+            setTimeout(function () {
+              submitBtn.innerText = "Send code again";
+              msg.classList.add("show");
+            }, 300);
+          }
+        }
+      });
+    }
+  }
+  restorePassword();
+}
 document.addEventListener("DOMContentLoaded", function (e) {
   header();
   home();
   product();
+  popups();
   document.addEventListener("scroll", function (e) {
     var scrollTop = document.documentElement.scrollTop;
     var header = document.querySelector(".header");

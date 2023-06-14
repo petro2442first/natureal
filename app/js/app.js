@@ -6,6 +6,8 @@ import Swiper, {
   Thumbs,
 } from "swiper";
 
+const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 function initSlider(selector, options) {
   const container = document.querySelector(selector) ?? null;
 
@@ -150,11 +152,81 @@ function product() {
   });
   productFeatures();
 }
+function popups() {
+  const showPopupClass = "open";
+  const closeBtns = document.querySelectorAll(".popup__close") ?? null;
+  if (closeBtns) {
+    closeBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const parent = btn.parentElement.parentElement;
 
+        if (parent.classList.contains("popup")) {
+          parent.classList.remove(showPopupClass);
+          document.documentElement.style = "";
+        }
+      });
+    });
+  }
+
+  function openPopup(selector) {
+    const popup = document.querySelector(selector) ?? null;
+    if (popup && popup?.classList.contains("popup")) {
+      popup.classList.add(showPopupClass);
+      document.documentElement.style.overflow = "hidden";
+    }
+  }
+
+  function formInputs() {
+    const selectors = ".login__input, .restore-pswrd__input";
+    const inputs = document.querySelectorAll(selectors) ?? null;
+    if (inputs) {
+      inputs.forEach((item) => {
+        const input = item.querySelector("input");
+        const label = item.querySelector("label");
+        input.addEventListener("input", (e) => {
+          item.classList.add("input");
+        });
+        input.addEventListener("focusout", (e) => {
+          if (input.value.length == 0) {
+            item.classList.remove("input");
+          }
+        });
+      });
+    }
+  }
+  formInputs();
+
+  const profileBtn = document.querySelector(".header__profile-btn") ?? null;
+  if (profileBtn) {
+    profileBtn.addEventListener("click", (e) => {
+      openPopup(".login");
+    });
+  }
+
+  function restorePassword() {
+    const submitBtn = document.querySelector(".restore-pswrd__submit") ?? null;
+    const email = document.querySelector(".restore-pswrd__input input") ?? null;
+    if (submitBtn) {
+      submitBtn.addEventListener("click", (e) => {
+        if (validateEmail(email?.value)) {
+          const msg = document.querySelector(".restore-pswrd__message") ?? null;
+          if (msg) {
+            setTimeout(() => {
+              submitBtn.innerText = "Send code again";
+              msg.classList.add("show");
+            }, 300);
+          }
+        }
+      });
+    }
+  }
+  restorePassword();
+}
 document.addEventListener("DOMContentLoaded", (e) => {
   header();
   home();
   product();
+  popups();
 
   document.addEventListener("scroll", (e) => {
     const scrollTop = document.documentElement.scrollTop;
