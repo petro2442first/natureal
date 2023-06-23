@@ -152,6 +152,28 @@ function product() {
   });
   productFeatures();
 }
+function formInputs() {
+  const selectors = [
+    ".login__input",
+    ".restore-pswrd__input",
+    ".register__input",
+  ];
+  const inputs = document.querySelectorAll(selectors.join(", ")) ?? null;
+  if (inputs) {
+    inputs.forEach((item) => {
+      const input = item.querySelector("input");
+      const label = item.querySelector("label");
+      input.addEventListener("input", (e) => {
+        item.classList.add("input");
+      });
+      input.addEventListener("focusout", (e) => {
+        if (input.value.length == 0) {
+          item.classList.remove("input");
+        }
+      });
+    });
+  }
+}
 function popups() {
   const showPopupClass = "open";
   const closeBtns = document.querySelectorAll(".popup__close") ?? null;
@@ -175,26 +197,6 @@ function popups() {
       document.documentElement.style.overflow = "hidden";
     }
   }
-
-  function formInputs() {
-    const selectors = ".login__input, .restore-pswrd__input";
-    const inputs = document.querySelectorAll(selectors) ?? null;
-    if (inputs) {
-      inputs.forEach((item) => {
-        const input = item.querySelector("input");
-        const label = item.querySelector("label");
-        input.addEventListener("input", (e) => {
-          item.classList.add("input");
-        });
-        input.addEventListener("focusout", (e) => {
-          if (input.value.length == 0) {
-            item.classList.remove("input");
-          }
-        });
-      });
-    }
-  }
-  formInputs();
 
   const profileBtn = document.querySelector(".header__profile-btn") ?? null;
   if (profileBtn) {
@@ -227,6 +229,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   home();
   product();
   popups();
+  formInputs();
 
   document.addEventListener("scroll", (e) => {
     const scrollTop = document.documentElement.scrollTop;

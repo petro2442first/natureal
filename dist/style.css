@@ -442,6 +442,67 @@ template {
   font-style: normal;
   font-display: swap;
 }
+.register__input, .restore-pswrd__input, .login__input {
+  padding-top: 25px;
+  position: relative;
+  width: 100%;
+}
+.register__input label, .restore-pswrd__input label, .login__input label {
+  position: absolute;
+  top: calc(100% - 35px);
+  left: 10px;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #6c7d87;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 0;
+}
+.register__input input, .restore-pswrd__input input, .login__input input {
+  padding: 10px;
+  border: 0;
+  border-bottom: 1px solid #1d1d1f;
+  background: transparent;
+  width: 100%;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #1d1d1f;
+  outline: 0;
+  position: relative;
+  z-index: 1;
+}
+.input.register__input label, .input.restore-pswrd__input label, .input.login__input label {
+  top: 10px;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.register__submit, .restore-pswrd__submit, .login__register-link, .login__submit {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height, or 128% */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Black */
+  color: #1d1d1f;
+  padding: 14px;
+  width: 100%;
+  border: 1px solid #1d1d1f;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -502,6 +563,22 @@ input[type=number] {
 .swiper {
   width: 100%;
   height: 600px;
+}
+
+.page-title {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  /* Black */
+  color: #1d1d1f;
+  padding: 30px 0;
 }
 
 .header {
@@ -2440,67 +2517,6 @@ input[type=number] {
   align-items: center;
 }
 
-.restore-pswrd__input, .login__input {
-  padding-top: 25px;
-  position: relative;
-  width: 100%;
-}
-.restore-pswrd__input label, .login__input label {
-  position: absolute;
-  top: calc(100% - 35px);
-  left: 10px;
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  color: #6c7d87;
-  cursor: pointer;
-  transition: 0.3s;
-  z-index: 0;
-}
-.restore-pswrd__input input, .login__input input {
-  padding: 10px;
-  border: 0;
-  border-bottom: 1px solid #1d1d1f;
-  background: transparent;
-  width: 100%;
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  color: #1d1d1f;
-  outline: 0;
-  position: relative;
-  z-index: 1;
-}
-.input.restore-pswrd__input label, .input.login__input label {
-  top: 10px;
-  font-size: 16px;
-  line-height: 16px;
-}
-
-.restore-pswrd__submit, .login__register-link, .login__submit {
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 23px;
-  /* identical to box height, or 128% */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  /* Black */
-  color: #1d1d1f;
-  padding: 14px;
-  width: 100%;
-  border: 1px solid #1d1d1f;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
 .popup {
   position: fixed;
   top: 0;
@@ -2678,6 +2694,193 @@ input[type=number] {
 }
 .restore-pswrd__message.show {
   display: block;
+}
+
+.register {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register__container {
+  max-width: 600px;
+  width: 100%;
+}
+.register__text {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1d1d1f;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.register__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.register__socials a {
+  width: 60px;
+  height: 60px;
+}
+.register__socials a img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.register__terms {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #1d1d1f;
+  margin-bottom: 45px;
+}
+.register__terms a {
+  display: inline;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #1d1d1f;
+  border-bottom: 1px solid #1d1d1f;
+  margin: 0 3px;
+}
+.register__divider {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #1d1d1f;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.register__divider::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: 0;
+  width: calc(50% - 60px);
+  height: 1px;
+  background: #1d1d1f;
+}
+.register__divider::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(50% - 0.5px);
+  right: 0;
+  width: calc(50% - 60px);
+  height: 1px;
+  background: #1d1d1f;
+}
+.register__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.register__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+.register__checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register__checkbox label {
+  font-family: "Mabry Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height, or 138% */
+  display: flex;
+  align-items: center;
+  /* Black */
+  color: #1d1d1f;
+  position: relative;
+  padding-left: 24px;
+}
+.register__checkbox label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  top: calc(50% - 9px);
+  background-image: url(assets/images/icons/checkbox-unchecked.svg);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.register__checkbox label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  top: calc(50% - 4px);
+  background: #1d1d1f;
+  border-radius: 100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.register__checkbox input {
+  position: fixed;
+  z-index: -999;
+  visibility: hidden;
+  opacity: 0;
+}
+.register__checkbox input:checked + label::after {
+  opacity: 1;
+  visibility: visible;
+}
+.register__recaptcha {
+  margin-top: 25px;
+}
+.register__submit {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 17px 48px;
+  margin-top: 45px;
 }
 
 .footer {
@@ -3577,5 +3780,10 @@ input[type=number] {
     padding: 15px 20px;
     font-size: 14px;
     line-height: 14px;
+  }
+  .register__row {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 0;
   }
 }
