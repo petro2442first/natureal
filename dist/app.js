@@ -151,7 +151,7 @@ function product() {
 }
 function formInputs() {
   var _document$querySelect6;
-  var selectors = [".login__input", ".restore-pswrd__input", ".register__input"];
+  var selectors = [".login__input", ".restore-pswrd__input", ".register__input", ".profile__input"];
   var inputs = (_document$querySelect6 = document.querySelectorAll(selectors.join(", "))) !== null && _document$querySelect6 !== void 0 ? _document$querySelect6 : null;
   if (inputs) {
     inputs.forEach(function (item) {

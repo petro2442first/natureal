@@ -157,6 +157,7 @@ function formInputs() {
     ".login__input",
     ".restore-pswrd__input",
     ".register__input",
+    ".profile__input",
   ];
   const inputs = document.querySelectorAll(selectors.join(", ")) ?? null;
   if (inputs) {

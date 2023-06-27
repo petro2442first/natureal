@@ -1,0 +1,126 @@
+.profile {
+  width: 100%;
+  padding: 40px 60px 30px 60px;
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 220px auto;
+    gap: 10px;
+  }
+  &__menu {
+    position: relative;
+    height: 100%;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 20px;
+      li {
+        a {
+          color: #1d1d1f;
+          font-size: 18px;
+          font-family: "Mabry Pro";
+          line-height: 21px;
+          transition: 0.3s;
+          &.active {
+            border-bottom: 1px solid #1d1d1f;
+          }
+        }
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        rgba(118, 153, 175, 0.05),
+        rgba(118, 153, 175, 1),
+        rgba(118, 153, 175, 0.05)
+      );
+      right: 0;
+      top: 0;
+    }
+  }
+  &__logout-btn {
+    @extend %form-btn;
+    font-size: 16px;
+  }
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    padding: 0 90px;
+  }
+  &__form {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12, minmax(auto, 45px));
+    gap: 15px 30px;
+    grid-template-areas:
+      "first  first  first  first  last   last   last   last   middle middle middle middle"
+      "phone  phone  phone  phone  phone  phone  date   date   date   date   date   date"
+      "email1 email1 email1 email1 email1 email2 email2 email2 email2 email2 email2 email2"
+      "pswrd1 pswrd1 pswrd1 pswrd1 pswrd1 pswrd2 pswrd2 pswrd2 pswrd2 pswrd2 pswrd2 pswrd2";
+  }
+  &__input {
+    @extend %form-input;
+    &--firstname {
+      grid-area: first;
+    }
+    &--lastname {
+      grid-area: last;
+    }
+    &--middlename {
+      grid-area: middle;
+    }
+    &--phone {
+      grid-area: phone;
+    }
+    &--email {
+      grid-area: email1;
+    }
+    &--password {
+      grid-area: pswrd1;
+    }
+  }
+  &__date {
+    @extend %form-input;
+    grid-area: date;
+  }
+  &__change-email {
+    @extend %form-btn;
+    grid-area: email2;
+    padding: 13px 55px;
+    width: 210px;
+    font-size: 16px;
+  }
+  &__change-password {
+    @extend %form-btn;
+    grid-area: pswrd2;
+    padding: 13px;
+    width: 210px;
+    font-size: 16px;
+  }
+  &__remove {
+    display: block;
+    color: #1d1d1f;
+    font-size: 14px;
+    font-family: "Mabry Pro";
+    font-weight: 500;
+    margin-top: 50px;
+    border-bottom: 1px solid #1d1d1f;
+  }
+}

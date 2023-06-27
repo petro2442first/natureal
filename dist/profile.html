@@ -146,74 +146,59 @@
         </div>
       </header>
       <div class="main-container">
-        <h1 class="page-title">РЕЄСТРАЦІЯ</h1>
-        <div class="register">
-          <div class="register__container">
-            <div class="register__text">REGISTER WITH:</div>
-            <div class="register__socials">
-              <a href="#">
-                <img src="assets/images/icons/google.svg" alt="" />
-              </a>
-              <a href="#">
-                <img src="assets/images/icons/apple.svg" alt="" />
-              </a>
+        <div class="profile">
+          <div class="profile__container">
+            <div class="profile__menu">
+              <ul>
+                <li>
+                  <a href="#" class="active">Account overview</a>
+                </li>
+                <li>
+                  <a href="#">Orders</a>
+                </li>
+                <li>
+                  <a href="#">Cart</a>
+                </li>
+              </ul>
+              <button class="profile__logout-btn">Log out</button>
             </div>
-            <div class="register__terms">
-              By register in this way you automatically agree to our
-              <a href="#">terms</a>, and <a href="#">privacy policy</a>
-            </div>
-            <div class="register__divider">OR</div>
-            <form action="#" class="register__form">
-              <div class="register__row">
-                <div class="register__input">
-                  <label for="email">Email*</label>
-                  <input type="text" id="email" required />
+            <div class="profile__col">
+              <form action="#" class="profile__form">
+                <div class="profile__input profile__input--firstname">
+                  <input type="text" id="firstname" />
+                  <label for="firstname">First name*</label>
                 </div>
-              </div>
-              <div class="register__row">
-                <div class="register__input">
-                  <label for="password">Password*</label>
-                  <input type="password" id="password" required />
-                </div>
-                <div class="register__input">
-                  <label for="password-confirmation">Repeat password*</label>
-                  <input type="password" id="password-confirmation" required />
-                </div>
-              </div>
-              <div class="register__row">
-                <div class="register__input">
-                  <label for="name">First name*</label>
-                  <input type="text" id="name" requried />
-                </div>
-                <div class="register__input">
-                  <label for="lastname">Last name</label>
+                <div class="profile__input profile__input--lastname">
                   <input type="text" id="lastname" />
+                  <label for="lastname">Last name*</label>
                 </div>
-              </div>
-              <div class="register__row">
-                <div class="register__input">
+                <div class="profile__input profile__input--middlename">
+                  <input type="text" id="middlename" />
+                  <label for="middlename">Middle name</label>
+                </div>
+                <div class="profile__input profile__input--phone">
+                  <input type="text" id="phone" />
                   <label for="phone">Phone number*</label>
-                  <input type="text" id="phone" required />
                 </div>
-              </div>
-              <div class="register__col">
-                <div class="register__checkbox">
-                  <input type="checkbox" name="" id="terms" required />
-
-                  <label for="terms"
-                    >*I have read and agree to the terms and conditions</label
-                  >
+                <div class="profile__date input">
+                  <input type="date" id="date" />
+                  <label for="date">Date of birth</label>
                 </div>
-                <div class="register__checkbox">
-                  <input type="checkbox" name="" id="subscribe" />
-                  <label for="subscribe">Subscribe on newsletter</label>
+                <div class="profile__input profile__input--email">
+                  <input type="text" id="email" />
+                  <label for="email">Email*</label>
                 </div>
-              </div>
-              <div class="register__recaptcha">
-                <img src="assets/images/recaptcha.jpg" alt="" />
-              </div>
-              <button class="register__submit">Створити акаунт</button>
-            </form>
+                <button class="profile__change-email">Change Email</button>
+                <div class="profile__input profile__input--password">
+                  <input type="password" id="password" />
+                  <label for="password">Password*</label>
+                </div>
+                <button class="profile__change-password">
+                  Change Password
+                </button>
+              </form>
+              <a href="#" class="profile__remove">Delete profile</a>
+            </div>
           </div>
         </div>
       </div>

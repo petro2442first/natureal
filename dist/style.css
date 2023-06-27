@@ -442,12 +442,12 @@ template {
   font-style: normal;
   font-display: swap;
 }
-.register__input, .restore-pswrd__input, .login__input {
+.profile__date, .profile__input, .register__input, .restore-pswrd__input, .login__input {
   padding-top: 25px;
   position: relative;
   width: 100%;
 }
-.register__input label, .restore-pswrd__input label, .login__input label {
+.profile__date label, .profile__input label, .register__input label, .restore-pswrd__input label, .login__input label {
   position: absolute;
   top: calc(100% - 35px);
   left: 10px;
@@ -461,7 +461,7 @@ template {
   transition: 0.3s;
   z-index: 0;
 }
-.register__input input, .restore-pswrd__input input, .login__input input {
+.profile__date input, .profile__input input, .register__input input, .restore-pswrd__input input, .login__input input {
   padding: 10px;
   border: 0;
   border-bottom: 1px solid #1d1d1f;
@@ -477,13 +477,13 @@ template {
   position: relative;
   z-index: 1;
 }
-.input.register__input label, .input.restore-pswrd__input label, .input.login__input label {
+.input.profile__date label, .input.profile__input label, .input.register__input label, .input.restore-pswrd__input label, .input.login__input label {
   top: 10px;
   font-size: 16px;
   line-height: 16px;
 }
 
-.register__submit, .restore-pswrd__submit, .login__register-link, .login__submit {
+.profile__change-password, .profile__change-email, .profile__logout-btn, .register__submit, .restore-pswrd__submit, .login__register-link, .login__submit {
   font-family: "Mabry Pro";
   font-style: normal;
   font-weight: 400;
@@ -2883,6 +2883,114 @@ input[type=number] {
   margin-top: 45px;
 }
 
+.profile {
+  width: 100%;
+  padding: 40px 60px 30px 60px;
+}
+.profile__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 220px auto;
+  gap: 10px;
+}
+.profile__menu {
+  position: relative;
+  height: 100%;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+.profile__menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.profile__menu ul li a {
+  color: #1d1d1f;
+  font-size: 18px;
+  font-family: "Mabry Pro";
+  line-height: 21px;
+  transition: 0.3s;
+}
+.profile__menu ul li a.active {
+  border-bottom: 1px solid #1d1d1f;
+}
+.profile__menu::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(118, 153, 175, 0.05), rgb(118, 153, 175), rgba(118, 153, 175, 0.05));
+  right: 0;
+  top: 0;
+}
+.profile__logout-btn {
+  font-size: 16px;
+}
+.profile__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 90px;
+}
+.profile__form {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, minmax(auto, 45px));
+  gap: 15px 30px;
+  grid-template-areas: "first  first  first  first  last   last   last   last   middle middle middle middle" "phone  phone  phone  phone  phone  phone  date   date   date   date   date   date" "email1 email1 email1 email1 email1 email2 email2 email2 email2 email2 email2 email2" "pswrd1 pswrd1 pswrd1 pswrd1 pswrd1 pswrd2 pswrd2 pswrd2 pswrd2 pswrd2 pswrd2 pswrd2";
+}
+.profile__input--firstname {
+  grid-area: first;
+}
+.profile__input--lastname {
+  grid-area: last;
+}
+.profile__input--middlename {
+  grid-area: middle;
+}
+.profile__input--phone {
+  grid-area: phone;
+}
+.profile__input--email {
+  grid-area: email1;
+}
+.profile__input--password {
+  grid-area: pswrd1;
+}
+.profile__date {
+  grid-area: date;
+}
+.profile__change-email {
+  grid-area: email2;
+  padding: 13px 55px;
+  width: 210px;
+  font-size: 16px;
+}
+.profile__change-password {
+  grid-area: pswrd2;
+  padding: 13px;
+  width: 210px;
+  font-size: 16px;
+}
+.profile__remove {
+  display: block;
+  color: #1d1d1f;
+  font-size: 14px;
+  font-family: "Mabry Pro";
+  font-weight: 500;
+  margin-top: 50px;
+  border-bottom: 1px solid #1d1d1f;
+}
+
 .footer {
   padding: 60px 0px 0 0px;
   position: relative;
@@ -3099,6 +3207,15 @@ input[type=number] {
   }
 }
 @media (max-width: 1200px) {
+  .profile__col {
+    padding: 0 30px;
+  }
+  .login__input input, .restore-pswrd__input input, .register__input input, .profile__input input, .profile__date input {
+    font-size: 16px;
+  }
+  .login__input label, .restore-pswrd__input label, .register__input label, .profile__input label, .profile__date label {
+    font-size: 16px;
+  }
   .header {
     padding: 20px;
   }
@@ -3403,6 +3520,18 @@ input[type=number] {
   }
 }
 @media (max-width: 900px) {
+  .profile {
+    padding: 30px 0;
+  }
+  .profile__container {
+    grid-template-columns: 1fr;
+  }
+  .profile__col {
+    padding: 0;
+  }
+  .profile__menu {
+    display: none;
+  }
   .header__icon {
     width: 24px;
     height: 24px;
@@ -3785,5 +3914,24 @@ input[type=number] {
     grid-template-columns: 1fr;
     width: 100%;
     gap: 0;
+  }
+}
+@media (max-width: 600px) {
+  .profile__form {
+    grid-template-columns: 1fr;
+    grid-template-areas: "first" "last" "middle" "phone" "date" "email1" "email2" "pswrd1" "pswrd2";
+  }
+  .profile__change-email {
+    width: 100%;
+    padding: 12px;
+  }
+  .profile__change-password {
+    width: 100%;
+    padding: 12px;
+  }
+  .profile__remove {
+    margin-top: 70px;
+    text-align: center;
+    align-self: center;
   }
 }

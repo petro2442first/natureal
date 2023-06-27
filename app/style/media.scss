@@ -6,6 +6,19 @@
   }
 }
 @media (max-width: 1200px) {
+  .profile {
+    &__col {
+      padding: 0 30px;
+    }
+  }
+  %form-input {
+    input {
+      font-size: 16px;
+    }
+    label {
+      font-size: 16px;
+    }
+  }
   .header {
     padding: 20px;
     &__container {
@@ -346,6 +359,18 @@
   }
 }
 @media (max-width: 900px) {
+  .profile {
+    padding: 30px 0;
+    &__container {
+      grid-template-columns: 1fr;
+    }
+    &__col {
+      padding: 0;
+    }
+    &__menu {
+      display: none;
+    }
+  }
   .header {
     &__icon {
       width: 24px;
@@ -796,6 +821,37 @@
       grid-template-columns: 1fr;
       width: 100%;
       gap: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .profile {
+    &__form {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "first"
+        "last"
+        "middle"
+        "phone"
+        "date"
+        "email1"
+        "email2"
+        "pswrd1"
+        "pswrd2";
+    }
+    &__change-email {
+      width: 100%;
+      padding: 12px;
+    }
+    &__change-password {
+      width: 100%;
+      padding: 12px;
+    }
+    &__remove {
+      margin-top: 70px;
+      text-align: center;
+      align-self: center;
     }
   }
 }
