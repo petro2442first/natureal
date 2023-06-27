@@ -162,42 +162,72 @@
               </ul>
               <button class="profile__logout-btn">Log out</button>
             </div>
-            <div class="profile__col">
-              <form action="#" class="profile__form">
-                <div class="profile__input profile__input--firstname">
-                  <input type="text" id="firstname" />
-                  <label for="firstname">First name*</label>
+            <div class="profile__tabs">
+              <div class="profile__tab">
+                <div class="profile__col">
+                  <form action="#" class="profile__form">
+                    <div class="profile__input profile__input--firstname">
+                      <input type="text" id="firstname" />
+                      <label for="firstname">First name*</label>
+                    </div>
+                    <div class="profile__input profile__input--lastname">
+                      <input type="text" id="lastname" />
+                      <label for="lastname">Last name*</label>
+                    </div>
+                    <div class="profile__input profile__input--middlename">
+                      <input type="text" id="middlename" />
+                      <label for="middlename">Middle name</label>
+                    </div>
+                    <div class="profile__input profile__input--phone">
+                      <input type="text" id="phone" />
+                      <label for="phone">Phone number*</label>
+                    </div>
+                    <div class="profile__date input">
+                      <input type="date" id="date" />
+                      <label for="date">Date of birth</label>
+                    </div>
+                    <div class="profile__input profile__input--email">
+                      <input type="text" id="email" />
+                      <label for="email">Email*</label>
+                    </div>
+                    <button class="profile__change-email">Change Email</button>
+                    <div class="profile__input profile__input--password">
+                      <input type="password" id="password" />
+                      <label for="password">Password*</label>
+                    </div>
+                    <button class="profile__change-password">
+                      Change Password
+                    </button>
+                  </form>
+                  <a href="#" class="profile__remove">Delete profile</a>
                 </div>
-                <div class="profile__input profile__input--lastname">
-                  <input type="text" id="lastname" />
-                  <label for="lastname">Last name*</label>
+              </div>
+              <div class="profile__tab">
+                <div class="orders">
+                  <div class="order-filters">
+                    <div class="order-filters__name">
+                      <input type="text" id="filter-name" />
+                      <label for="filter-name"></label>
+                    </div>
+                    <div class="order-filters__location">
+                      <input type="text" id="filter-location" />
+                      <label for="filter-location"></label>
+                    </div>
+                    <div class="order-filters__status">
+                      <label for="filter-status"></label>
+                      <select name="" id="filter-status"></select>
+                    </div>
+                    <div class="order-filters__date">
+                      <label for="filterW-date"></label>
+                      <select name="filter-date" id=""></select>
+                    </div>
+                    <button class="order-filters__reset-btn"></button>
+                  </div>
+                  <div class="orders__list">
+                    <div class="order-item"></div>
+                  </div>
                 </div>
-                <div class="profile__input profile__input--middlename">
-                  <input type="text" id="middlename" />
-                  <label for="middlename">Middle name</label>
-                </div>
-                <div class="profile__input profile__input--phone">
-                  <input type="text" id="phone" />
-                  <label for="phone">Phone number*</label>
-                </div>
-                <div class="profile__date input">
-                  <input type="date" id="date" />
-                  <label for="date">Date of birth</label>
-                </div>
-                <div class="profile__input profile__input--email">
-                  <input type="text" id="email" />
-                  <label for="email">Email*</label>
-                </div>
-                <button class="profile__change-email">Change Email</button>
-                <div class="profile__input profile__input--password">
-                  <input type="password" id="password" />
-                  <label for="password">Password*</label>
-                </div>
-                <button class="profile__change-password">
-                  Change Password
-                </button>
-              </form>
-              <a href="#" class="profile__remove">Delete profile</a>
+              </div>
             </div>
           </div>
         </div>
