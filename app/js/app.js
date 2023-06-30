@@ -225,13 +225,51 @@ function popups() {
   }
   restorePassword();
 }
+
+function about() {
+  initSlider("#about-slider", {
+    modules: [Navigation],
+    effect: "slide",
+    spaceBetween: 60,
+    navigation: {
+      nextEl: "#about-slider__next",
+      prevEl: "#about-slider__prev",
+    },
+  });
+  initSlider("#about-slider-2", {
+    modules: [Navigation],
+    effect: "slide",
+    spaceBetween: 60,
+    navigation: {
+      nextEl: "#about-slider__next",
+      prevEl: "#about-slider__prev",
+    },
+  });
+  initSlider("#about-slider-3", {
+    modules: [Navigation],
+    effect: "slide",
+    spaceBetween: 60,
+    navigation: {
+      nextEl: "#about-slider__next",
+      prevEl: "#about-slider__prev",
+    },
+  });
+}
+
 document.addEventListener("DOMContentLoaded", (e) => {
   header();
-  home();
-  product();
+
   popups();
   formInputs();
-
+  const mainContainer = document.querySelector(".main-container") ?? null;
+  if (mainContainer) {
+    if (mainContainer.classList.contains("about-container")) {
+      about();
+    } else {
+      home();
+      product();
+    }
+  }
   document.addEventListener("scroll", (e) => {
     const scrollTop = document.documentElement.scrollTop;
 

@@ -218,12 +218,49 @@ function popups() {
   }
   restorePassword();
 }
+function about() {
+  initSlider("#about-slider", {
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+    effect: "slide",
+    spaceBetween: 60,
+    navigation: {
+      nextEl: "#about-slider__next",
+      prevEl: "#about-slider__prev"
+    }
+  });
+  initSlider("#about-slider-2", {
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+    effect: "slide",
+    spaceBetween: 60,
+    navigation: {
+      nextEl: "#about-slider__next",
+      prevEl: "#about-slider__prev"
+    }
+  });
+  initSlider("#about-slider-3", {
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+    effect: "slide",
+    spaceBetween: 60,
+    navigation: {
+      nextEl: "#about-slider__next",
+      prevEl: "#about-slider__prev"
+    }
+  });
+}
 document.addEventListener("DOMContentLoaded", function (e) {
+  var _document$querySelect13;
   header();
-  home();
-  product();
   popups();
   formInputs();
+  var mainContainer = (_document$querySelect13 = document.querySelector(".main-container")) !== null && _document$querySelect13 !== void 0 ? _document$querySelect13 : null;
+  if (mainContainer) {
+    if (mainContainer.classList.contains("about-container")) {
+      about();
+    } else {
+      home();
+      product();
+    }
+  }
   document.addEventListener("scroll", function (e) {
     var scrollTop = document.documentElement.scrollTop;
     var header = document.querySelector(".header");

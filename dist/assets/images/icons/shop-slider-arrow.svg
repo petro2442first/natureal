@@ -1,4 +1,6 @@
-<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="25" cy="25" r="25" transform="matrix(-1 0 0 1 50 0)" fill="#7699AF"/>
-<path d="M29.2847 35.4167L18.868 25L29.2847 14.5833" stroke="#F5F5F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="arrow_dropdown">
+<rect width="33.3333" height="33.3333" transform="matrix(-1.19249e-08 -1 -1 1.19249e-08 34.2031 33.6665)" fill="white"/>
+<path id="Path" d="M22.2031 27.4165L11.7865 16.9998L22.2031 6.58317" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 </svg>
