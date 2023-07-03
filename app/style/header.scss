@@ -1,13 +1,13 @@
 .header {
-  background: #b4c7d3;
-  border-radius: 10px 10px 0px 0px;
-  width: calc(100% - 60px);
+  background: #f5f5f7;
+  border-radius: 0;
+  width: 100%;
   padding: 30px;
   position: fixed;
-  top: 30px;
-  left: 30px;
+  top: 0px;
+  left: 0px;
   z-index: 10;
-  backdrop-filter: blur(10px) brightness(80%);
+
   transition: 0.3s;
 
   z-index: 9999;
@@ -17,8 +17,9 @@
     left: 0;
     width: 100%;
     border-radius: 0;
-    background: rgba(#b4c7d3, 0.6);
+    background: rgba(#f5f5f7, 0.6);
     padding: 20px;
+    backdrop-filter: blur(10px) brightness(80%);
   }
   &__container {
     width: 100%;
@@ -108,12 +109,14 @@
     align-items: center;
     cursor: pointer;
     span {
-      font-family: "Mabry Pro";
-      font-style: normal;
-      font-weight: 400;
+      color: var(--black, #1d1d1f);
+      leading-trim: both;
+      text-edge: cap;
       font-size: 18px;
-      line-height: 18px;
-      color: #f5f5f7;
+      font-family: Mabry Pro;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
     }
     img {
       margin-left: 5px;
@@ -158,6 +161,22 @@
       }
     }
   }
+  &--white {
+    background: transparent;
+    .nav-menu__item {
+      & > a {
+        color: #fff;
+      }
+    }
+    .header__lang-btn {
+      span {
+        color: #fff;
+      }
+    }
+    &.fixed {
+      background: rgba(#1d1d1f, 0.6);
+    }
+  }
 }
 
 .nav-menu {
@@ -168,15 +187,13 @@
   &__item {
     width: 100%;
     & > a {
-      font-family: "Mabry Pro";
+      color: var(--black, #1d1d1f);
+      font-size: 18px;
+      font-family: Mabry Pro;
       font-style: normal;
       font-weight: 400;
-      font-size: 20px;
-      line-height: 20px;
-      display: flex;
-      align-items: flex-end;
-      text-transform: capitalize;
-      color: #f5f5f7;
+      line-height: normal;
+      text-transform: uppercase;
       transition: 0.3s;
       &:hover {
         opacity: 0.8;

@@ -116,7 +116,8 @@ input[type="number"] {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px;
+  padding: 0 30px;
+  background: linear-gradient(0deg, #ebebeb 0%, #ebebeb 100%), #fff;
 }
 
 .main-container {
@@ -155,6 +156,7 @@ input[type="number"] {
 @import "./about.scss";
 @import "./blog.scss";
 @import "./cart.scss";
+@import "./shop.scss";
 
 @import "./footer.scss";
 

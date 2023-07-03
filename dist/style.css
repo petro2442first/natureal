@@ -552,7 +552,8 @@ input[type=number] {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px;
+  padding: 0 30px;
+  background: linear-gradient(0deg, #ebebeb 0%, #ebebeb 100%), #fff;
 }
 
 .main-container {
@@ -582,16 +583,14 @@ input[type=number] {
 }
 
 .header {
-  background: #b4c7d3;
-  border-radius: 10px 10px 0px 0px;
-  width: calc(100% - 60px);
+  background: #f5f5f7;
+  border-radius: 0;
+  width: 100%;
   padding: 30px;
   position: fixed;
-  top: 30px;
-  left: 30px;
+  top: 0px;
+  left: 0px;
   z-index: 10;
-  -webkit-backdrop-filter: blur(10px) brightness(80%);
-          backdrop-filter: blur(10px) brightness(80%);
   transition: 0.3s;
   z-index: 9999;
 }
@@ -601,8 +600,10 @@ input[type=number] {
   left: 0;
   width: 100%;
   border-radius: 0;
-  background: rgba(180, 199, 211, 0.6);
+  background: rgba(245, 245, 247, 0.6);
   padding: 20px;
+  -webkit-backdrop-filter: blur(10px) brightness(80%);
+          backdrop-filter: blur(10px) brightness(80%);
 }
 .header__container {
   width: 100%;
@@ -697,12 +698,14 @@ input[type=number] {
   cursor: pointer;
 }
 .header__lang-btn span {
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 400;
+  color: var(--black, #1d1d1f);
+  leading-trim: both;
+  text-edge: cap;
   font-size: 18px;
-  line-height: 18px;
-  color: #f5f5f7;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
 }
 .header__lang-btn img {
   margin-left: 5px;
@@ -743,6 +746,18 @@ input[type=number] {
 .header__lang-dropdown li:hover {
   opacity: 0.8;
 }
+.header--white {
+  background: transparent;
+}
+.header--white .nav-menu__item > a {
+  color: #fff;
+}
+.header--white .header__lang-btn span {
+  color: #fff;
+}
+.header--white.fixed {
+  background: rgba(29, 29, 31, 0.6);
+}
 
 .nav-menu {
   display: grid;
@@ -754,15 +769,13 @@ input[type=number] {
   width: 100%;
 }
 .nav-menu__item > a {
-  font-family: "Mabry Pro";
+  color: var(--black, #1d1d1f);
+  font-size: 18px;
+  font-family: Mabry Pro;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  display: flex;
-  align-items: flex-end;
-  text-transform: capitalize;
-  color: #f5f5f7;
+  line-height: normal;
+  text-transform: uppercase;
   transition: 0.3s;
 }
 .nav-menu__item > a:hover {
@@ -1099,235 +1112,6 @@ input[type=number] {
   height: fit-content;
   max-height: 500px;
 }
-.shop-item {
-  position: relative;
-  background: linear-gradient(74.66deg, #d7e6ef -5.56%, #ecf0f3 36.64%, #f0f0f0 100%);
-  border-radius: 10px;
-  height: 500px;
-}
-.shop-item__status {
-  position: absolute;
-  z-index: 3;
-  top: 40px;
-  left: 0px;
-  padding: 10px 50px;
-  border-radius: 0px 80px 80px 0px;
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 18px;
-  /* identical to box height */
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #f7f3ea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transition: 0.3s;
-}
-.shop-item__status.sale {
-  background: linear-gradient(90deg, rgba(227, 13, 51, 0.8) 0%, rgba(227, 13, 51, 0.696) 100%);
-}
-.shop-item__thumbnail {
-  width: 100%;
-  height: 350px;
-  position: relative;
-}
-.shop-item__thumbnail img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
-  transition: 0.3s;
-}
-.shop-item__thumbnail img:nth-child(2) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  visibility: hidden;
-  opacity: 0;
-}
-.shop-item__container {
-  position: relative;
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.shop-item__content {
-  padding: 15px 25px 25px 25px;
-  transition: 0.3s;
-}
-.shop-item__content.main {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-areas: "title ." "tags  price";
-  gap: 15px;
-}
-.shop-item__content.hover {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 15px;
-  width: 100%;
-}
-.shop-item__add-to-favorites {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  z-index: 2;
-  cursor: pointer;
-  transition: 0.3s;
-  opacity: 0;
-  visibility: hidden;
-}
-.shop-item__variations {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.shop-item__variations li {
-  display: block;
-  padding: 15px;
-  border-radius: 40px;
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 18px;
-  text-transform: capitalize;
-  /* White */
-  color: #364e5c;
-}
-.shop-item__variations li.active {
-  background: #7699af;
-  color: #f5f5f7;
-}
-.shop-item__add-to-cart {
-  width: 100%;
-  padding: 15px;
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 18px;
-  /* identical to box height */
-  display: flex;
-  align-items: flex-end;
-  letter-spacing: -0.02em;
-  /* White */
-  color: #f5f5f7;
-  background: #7699af;
-  border-top: 0.5px solid #7699af;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-}
-.shop-item__add-to-cart span {
-  margin-left: 5px;
-}
-.shop-item__title {
-  grid-area: title;
-  font-family: "Mabry Pro";
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
-  color: #7699af;
-}
-.shop-item__tags {
-  grid-area: tags;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.shop-item__tags li {
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 14px;
-  color: #7699af;
-}
-.shop-item__tags li + li {
-  padding-left: 5px;
-  margin-left: 5px;
-  border-left: 1px solid #7699af;
-}
-.shop-item__price {
-  grid-area: price;
-  display: flex;
-  align-items: flex-start;
-}
-.shop-item__price .regular {
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
-  /* identical to box height */
-  letter-spacing: -0.02em;
-  text-decoration-line: line-through;
-  text-transform: capitalize;
-  color: #7699af;
-}
-.shop-item__price .sale {
-  font-family: "Mabry Pro";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 24px;
-  /* identical to box height */
-  letter-spacing: -0.02em;
-  text-transform: capitalize;
-  color: #7699af;
-  margin-left: 8px;
-}
-.shop-item:hover .shop-item__content.hover {
-  opacity: 1;
-  visibility: visible;
-}
-.shop-item:hover .shop-item__content.main {
-  opacity: 0;
-  visibility: hidden;
-}
-.shop-item:hover .shop-item__thumbnail img:nth-child(1) {
-  opacity: 0;
-  visibility: hidden;
-}
-.shop-item:hover .shop-item__thumbnail img:nth-child(2) {
-  opacity: 1;
-  visibility: visible;
-}
-.shop-item:hover .shop-item__status {
-  opacity: 0;
-  visibility: hidden;
-}
-.shop-item:hover .shop-item__add-to-favorites {
-  opacity: 1;
-  visibility: visible;
-}
-
 .test {
   height: 600px;
   background: linear-gradient(74.66deg, #d7e6ef -5.56%, #ecf0f3 36.64%, #f0f0f0 100%);
@@ -3685,6 +3469,306 @@ input[type=number] {
 .cart__checkout-btn:hover {
   background: #1d1d1f;
   color: #fff;
+}
+
+.shop {
+  margin-top: -94px;
+}
+.shop__breadcrumbs {
+  width: calc(100% + 60px);
+  height: 300px;
+  background-image: url(assets/images/breadcrumbs-bg.jpg);
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  margin-left: -30px;
+  padding: 110px 30px 0 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+}
+.shop__breadcrumbs a {
+  color: var(--white, #f5f5f7);
+  font-size: 40px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+}
+.shop__breadcrumbs a + a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 20px);
+  transform: translate(50%, -50%) rotate(-90deg);
+  background-image: url(assets/images/icons/lang-dropdown.svg);
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+}
+.shop__title {
+  color: var(--black, #1d1d1f);
+  font-size: 40px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin: 30px 0 50px 0;
+}
+.shop__container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 30px;
+}
+.shop__filter {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-left: auto;
+  display: block;
+  transform: translateY(50%);
+}
+
+.shop-item {
+  position: relative;
+  border-radius: 10px;
+  background: #fbfbfb;
+  height: 500px;
+  transition: 0.5s;
+}
+.shop-item__status {
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: var(--black, #1d1d1f);
+  text-align: center;
+  font-size: 18px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.5s;
+}
+.shop-item__status.sale {
+  background: linear-gradient(90deg, rgba(227, 13, 51, 0.8) 0%, rgba(227, 13, 51, 0.696) 100%);
+}
+.shop-item__status.best-seller {
+  background: rgba(189, 174, 147, 0.15);
+}
+.shop-item__thumbnail {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+.shop-item__thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  transition: 0.5s;
+}
+.shop-item__thumbnail img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+}
+.shop-item__container {
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.shop-item__content {
+  padding: 15px 25px 25px 25px;
+  transition: 0.5s;
+}
+.shop-item__content.main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "title ." "tags  price";
+  gap: 15px;
+}
+.shop-item__content.hover {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+.shop-item__add-to-favorites {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  width: 36px;
+  height: 36px;
+}
+.shop-item__variations {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+}
+.shop-item__variations li {
+  display: block;
+  color: #1d1d1f;
+  font-size: 18px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.shop-item__variations li.active {
+  text-decoration-line: underline;
+}
+.shop-item__add-to-cart {
+  width: 100%;
+  color: var(--black, #1d1d1f);
+  font-size: 20px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--black, #1d1d1f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.shop-item__add-to-cart span {
+  margin-left: 5px;
+}
+.shop-item__add-to-cart:hover {
+  background: #1d1d1f;
+  color: #fff;
+}
+.shop-item__title {
+  grid-area: title;
+  color: var(--black, #1d1d1f);
+  font-size: 20px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+.shop-item__tags {
+  grid-area: tags;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.shop-item__tags li {
+  color: var(--black, #1d1d1f);
+  font-size: 18px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.shop-item__tags li + li {
+  padding-left: 5px;
+  margin-left: 5px;
+  border-left: 1px solid #1d1d1f;
+}
+.shop-item__price {
+  grid-area: price;
+  display: flex;
+  align-items: flex-start;
+}
+.shop-item__price .regular {
+  color: var(--black, #1d1d1f);
+  font-size: 14px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  text-decoration: line-through;
+  text-transform: capitalize;
+}
+.shop-item__price .sale {
+  color: var(--black, #1d1d1f);
+  font-size: 20px;
+  font-family: Mabry Pro;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+.shop-item:hover {
+  background: linear-gradient(0deg, #ebebeb 0%, #ebebeb 100%), #fff;
+}
+.shop-item:hover .shop-item__content.hover {
+  opacity: 1;
+  visibility: visible;
+}
+.shop-item:hover .shop-item__content.main {
+  opacity: 0;
+  visibility: hidden;
+}
+.shop-item:hover .shop-item__thumbnail img:nth-child(1) {
+  opacity: 0;
+  visibility: hidden;
+}
+.shop-item:hover .shop-item__thumbnail img:nth-child(2) {
+  opacity: 1;
+  visibility: visible;
+}
+.shop-item:hover .shop-item__status {
+  opacity: 0;
+  visibility: hidden;
+}
+.shop-item:hover .shop-item__add-to-favorites {
+  opacity: 1;
+  visibility: visible;
 }
 
 .footer {
