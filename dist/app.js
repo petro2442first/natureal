@@ -217,6 +217,16 @@ function popups() {
     }
   }
   restorePassword();
+  function cartPopup() {
+    var _document$querySelect13;
+    var cartBtn = (_document$querySelect13 = document.querySelector(".header__cart-btn")) !== null && _document$querySelect13 !== void 0 ? _document$querySelect13 : null;
+    if (cartBtn) {
+      cartBtn.addEventListener("click", function (e) {
+        return openPopup(".cart");
+      });
+    }
+  }
+  cartPopup();
 }
 function about() {
   initSlider("#about-slider", {
@@ -248,11 +258,11 @@ function about() {
   });
 }
 document.addEventListener("DOMContentLoaded", function (e) {
-  var _document$querySelect13;
+  var _document$querySelect14;
   header();
   popups();
   formInputs();
-  var mainContainer = (_document$querySelect13 = document.querySelector(".main-container")) !== null && _document$querySelect13 !== void 0 ? _document$querySelect13 : null;
+  var mainContainer = (_document$querySelect14 = document.querySelector(".main-container")) !== null && _document$querySelect14 !== void 0 ? _document$querySelect14 : null;
   if (mainContainer) {
     if (mainContainer.classList.contains("about-container")) {
       about();

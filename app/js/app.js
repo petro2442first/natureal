@@ -224,6 +224,14 @@ function popups() {
     }
   }
   restorePassword();
+
+  function cartPopup() {
+    const cartBtn = document.querySelector(".header__cart-btn") ?? null;
+    if (cartBtn) {
+      cartBtn.addEventListener("click", (e) => openPopup(".cart"));
+    }
+  }
+  cartPopup();
 }
 
 function about() {
