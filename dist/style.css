@@ -854,14 +854,16 @@ input[type=number] {
   left: 0;
   z-index: -1;
   background: #ebebeb;
-  opacity: 0;
   visibility: hidden;
-  transition: 0.3s;
+  -webkit-clip-path: circle(0% at 0 0);
+          clip-path: circle(0% at 0 0);
+  transition: 1s ease-out;
 }
 .mobile-menu.show {
   z-index: 999999;
-  opacity: 1;
   visibility: visible;
+  -webkit-clip-path: circle(150% at 0 0);
+          clip-path: circle(150% at 0 0);
 }
 .mobile-menu__row {
   display: grid;
@@ -3987,6 +3989,9 @@ input[type=number] {
   }
 }
 @media (max-width: 1200px) {
+  .shop__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .profile__col {
     padding: 0 30px;
   }
@@ -4050,7 +4055,7 @@ input[type=number] {
     max-height: 600px;
   }
   .shop-item {
-    height: 600px;
+    height: 620px;
   }
   .shop-item__content.hover {
     opacity: 1;
@@ -4402,42 +4407,34 @@ input[type=number] {
     align-items: center;
     gap: 30px;
   }
+  .shop__breadcrumbs a {
+    font-size: 30px;
+  }
   .shop-item {
-    height: 545px;
+    height: 575px;
   }
   .shop-item__title {
     font-size: 20px;
     line-height: 20px;
-    /* identical to box height */
-    color: #364e5c;
   }
   .shop-item__price .sale {
     font-size: 18px;
     line-height: 18px;
-    /* identical to box height */
     letter-spacing: -0.02em;
     text-transform: capitalize;
-    color: #364e5c;
   }
   .shop-item__price .regular {
     font-size: 14px;
     line-height: 14px;
-    /* identical to box height */
     letter-spacing: -0.02em;
     text-decoration-line: line-through;
     text-transform: capitalize;
-    color: #364e5c;
   }
   .shop-item__tags li {
     font-weight: 500;
     font-size: 12px;
     line-height: 12px;
-    /* identical to box height */
     text-transform: capitalize;
-    color: #364e5c;
-  }
-  .shop-item__variations li {
-    padding: 8px;
   }
   .shop-item__add-to-cart {
     padding: 10px;
@@ -4446,12 +4443,9 @@ input[type=number] {
     font-weight: 400;
     font-size: 14px;
     line-height: 14px;
-    /* identical to box height */
     display: flex;
     align-items: flex-end;
     letter-spacing: -0.02em;
-    /* White */
-    color: #f5f5f7;
   }
   .shop-item__content {
     padding: 15px;
@@ -4459,6 +4453,33 @@ input[type=number] {
   .shop-item__content.main {
     grid-template-columns: 3fr 1fr;
     grid-template-areas: "title price" "tags .";
+  }
+  .shop-item:hover {
+    background: #fff;
+  }
+  .shop-item:hover .shop-item__content.hover {
+    opacity: 1;
+    visibility: visible;
+  }
+  .shop-item:hover .shop-item__content.main {
+    opacity: 1;
+    visibility: visible;
+  }
+  .shop-item:hover .shop-item__thumbnail img:nth-child(1) {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .shop-item:hover .shop-item__thumbnail img:nth-child(2) {
+    opacity: 1;
+    visibility: visible;
+  }
+  .shop-item:hover .shop-item__status {
+    opacity: 1;
+    visibility: visible;
+  }
+  .shop-item:hover .shop-item__add-to-favorites {
+    opacity: 1;
+    visibility: visible;
   }
   .test,
   .our-philosophy {
@@ -4746,5 +4767,11 @@ input[type=number] {
     margin-top: 70px;
     text-align: center;
     align-self: center;
+  }
+  .shop__container {
+    grid-template-columns: 1fr;
+  }
+  .shop__breadcrumbs a:nth-child(2) {
+    display: none;
   }
 }
